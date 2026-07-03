@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Original Flagstaff Ghost Tour · Nightly 7 PM · Freaky Foot Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4edda;
+    --paper-2:#ece3c8;
+    --paper-lift:#faf5e6;
+    --ink:#1c1712;
+    --ink-soft:#4b4234;
+    --rule:rgba(28,23,18,.4);
+    --rule-soft:rgba(28,23,18,.18);
+    --red:#a2321f;
+    --red-deep:#84271a;
+    --teal:#1e5f5b;
+    --orange:#a4531c;
+    --magenta:#8e2f5c;
+    --shadow:4px 4px 0 rgba(28,23,18,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(122,92,40,.07), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(122,92,40,.08), transparent 50%),
+      repeating-linear-gradient(0deg, rgba(28,23,18,.012) 0 2px, transparent 2px 4px);
+    color:var(--ink);
+    font-family:'Old Standard TT','Times New Roman',serif;
+    font-size:17px;line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{color:var(--ink);}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+  .kicker{font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);}
+  .headline{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;letter-spacing:-.01em;}
+  .deck{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:var(--ink-soft);}
+  .smallcaps{font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:.82rem;
+    letter-spacing:.1em;text-transform:uppercase;text-decoration:none;text-align:center;
+    border:2px solid var(--ink);padding:.9rem 1.6rem;line-height:1.15;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+    cursor:pointer;min-height:48px;
+  }
+  .btn-red{background:var(--red);border-color:var(--red-deep);color:var(--paper-lift);box-shadow:var(--shadow);}
+  .btn-red:hover{background:var(--red-deep);transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(28,23,18,.32);}
+  .btn-ink{background:var(--ink);color:var(--paper-lift);box-shadow:var(--shadow);}
+  .btn-ink:hover{background:#000;transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(28,23,18,.32);}
+  .btn-ghost{background:transparent;color:var(--ink);box-shadow:3px 3px 0 rgba(28,23,18,.18);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper-lift);transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(28,23,18,.28);}
+  .btn-cream-outline{background:transparent;border-color:var(--paper-lift);color:var(--paper-lift);box-shadow:3px 3px 0 rgba(0,0,0,.45);}
+  .btn-cream-outline:hover{background:var(--paper-lift);color:var(--ink);transform:translate(-2px,-2px);}
+  .btn-block{display:flex;width:100%;}
+  .btn-sm{padding:.6rem 1.1rem;font-size:.72rem;min-height:40px;}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+  .final-cta a:focus-visible,.book-bar a:focus-visible,.booking-head a:focus-visible{outline-color:var(--paper-lift);}
+  .book-bar .btn-call:hover{background:var(--paper-lift);color:var(--ink);}
+
+  .photo{position:relative;border:1px solid var(--ink);background:var(--ink);}
+  .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) sepia(.14) contrast(1.07) brightness(.98);}
+  .photo.color img{filter:saturate(.85) sepia(.08) contrast(1.04);}
+  .photo.mono img{filter:grayscale(1) sepia(.2) contrast(1.12);}
+  .photo::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(28,23,18,.5) .6px, transparent 1.1px);
+    background-size:3.5px 3.5px;mix-blend-mode:multiply;opacity:.28;
+  }
+  figcaption{font-family:'Libre Franklin',sans-serif;font-size:.72rem;color:var(--ink-soft);padding:.5rem 2px 0;line-height:1.5;}
+  figcaption b{letter-spacing:.1em;text-transform:uppercase;font-size:.66rem;color:var(--ink);}
+
+  .stamp{
+    display:inline-block;border:3px double var(--red);color:var(--red);
+    font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:.68rem;
+    letter-spacing:.16em;text-transform:uppercase;padding:.55rem .9rem;
+    transform:rotate(-3deg);opacity:.92;line-height:1.4;text-align:center;
+  }
+
+  .section{padding:3.2rem 0 3.6rem;}
+  .section-head{border-top:4px double var(--ink);border-bottom:1px solid var(--ink);padding:.7rem 2px;margin-bottom:2rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .section-head h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.1;}
+
+  /* masthead (condensed for section front) */
+  .edition-bar{border-bottom:1px solid var(--rule);}
+  .edition-bar .wrap{display:flex;justify-content:space-between;gap:1rem;padding-top:.45rem;padding-bottom:.45rem;font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .masthead{padding:1.1rem 0 .8rem;text-align:center;}
+  .masthead h1{font-family:'UnifrakturMaguntia',serif;font-weight:400;font-size:clamp(2rem,6vw,3.4rem);line-height:1;}
+  .masthead h1 a{text-decoration:none;}
+  .dateline{margin-top:.6rem;border-top:1px solid var(--ink);border-bottom:4px double var(--ink);padding:.4rem 0;font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;}
+
+  .nav{position:sticky;top:0;z-index:200;background:var(--paper-lift);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);box-shadow:0 3px 0 rgba(28,23,18,.12);}
+  .nav .wrap{display:flex;align-items:center;gap:.4rem;padding-top:.5rem;padding-bottom:.5rem;}
+  .nav-brand{font-family:'UnifrakturMaguntia',serif;font-size:1.35rem;text-decoration:none;margin-right:.6rem;white-space:nowrap;}
+  .nav-links{display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none;flex:1;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{font-family:'Libre Franklin',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.55rem .7rem;white-space:nowrap;border:1px solid transparent;transition:all .12s ease;}
+  .nav-links a:hover{border-color:var(--ink);background:var(--paper);box-shadow:2px 2px 0 rgba(28,23,18,.25);}
+  .nav-actions{display:flex;gap:.5rem;margin-left:auto;}
+  .nav .btn{padding:.55rem 1rem;font-size:.7rem;min-height:40px;white-space:nowrap;}
+
+  /* tour hero */
+  .tour-hero{padding:2.2rem 0 1.2rem;}
+  .crumbs{font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;}
+  .crumbs a{color:var(--ink-soft);}
+  .tour-hero h2{font-size:clamp(2.1rem,5.6vw,4rem);max-width:900px;margin-bottom:.8rem;}
+  .tour-hero .deck{font-size:clamp(1.02rem,2vw,1.3rem);max-width:720px;margin-bottom:1.2rem;}
+  .byline-row{
+    display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:.55rem 2px;margin-bottom:1.6rem;
+    font-family:'Libre Franklin',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .byline-row .star{color:var(--red);}
+
+  /* main layout: story + booking rail */
+  .layout{display:grid;grid-template-columns:1.6fr .95fr;gap:2.4rem;align-items:start;}
+  .story-col > figure{margin-bottom:1.8rem;}
+  .story-col .photo.lede{aspect-ratio:16/10;}
+  .story-col .photo.lede img{aspect-ratio:16/10;}
+
+  .booking{position:sticky;top:76px;}
+  .booking-card{border:2px solid var(--ink);background:var(--paper-lift);box-shadow:var(--shadow);}
+  .booking-head{background:var(--ink);color:var(--paper-lift);padding:1rem 1.3rem;text-align:center;}
+  .booking-head .bh-kicker{font-family:'Libre Franklin',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#e0906f;}
+  .booking-head h3{font-family:'Playfair Display',serif;font-weight:900;font-size:1.45rem;line-height:1.15;padding-top:.2rem;}
+  .booking-body{padding:1.3rem;}
+  .booking-proof{text-align:center;font-family:'Libre Franklin',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:.9rem;margin-bottom:.9rem;}
+  .booking-proof .star{color:var(--red);letter-spacing:.2em;font-size:.9rem;display:block;margin-bottom:.2rem;}
+  table.fares{width:100%;border-collapse:collapse;margin-bottom:1rem;}
+  table.fares td{padding:.5rem 2px;border-bottom:1px dotted var(--rule);font-size:.95rem;}
+  table.fares td:last-child{text-align:right;font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;}
+  .spec-list{list-style:none;margin-bottom:1rem;}
+  .spec-list li{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-bottom:1px dotted var(--rule-soft);font-size:.88rem;}
+  .spec-list li b{font-family:'Libre Franklin',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;padding-top:.15rem;}
+  .spec-list li span{text-align:right;}
+  .booking-body .btn + .btn{margin-top:.6rem;}
+  .booking-fine{margin-top:.9rem;font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.05em;color:var(--ink-soft);text-align:center;line-height:1.7;text-transform:uppercase;}
+  .booking-fine .star{color:var(--red);}
+  .booking-stamp{text-align:center;margin-top:1.1rem;}
+
+  /* route highlights */
+  .route-box{border-top:4px double var(--ink);border-bottom:1px solid var(--ink);padding:1.2rem 0 1.4rem;margin-bottom:1.8rem;}
+  .route-box h3{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;margin-bottom:.9rem;}
+  .route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .route-stop{border:1px solid var(--rule);background:var(--paper-lift);padding:.9rem;box-shadow:3px 3px 0 rgba(28,23,18,.12);}
+  .route-stop .num{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--red);line-height:1;}
+  .route-stop h4{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;margin:.3rem 0 .25rem;line-height:1.25;}
+  .route-stop p{font-size:.82rem;line-height:1.5;color:var(--ink-soft);}
+
+  /* story sections */
+  .story-block{margin-bottom:2.2rem;}
+  .story-block h3{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.15;margin-bottom:.8rem;border-top:1px solid var(--rule);padding-top:1.1rem;}
+  .story-block h3 .kicker{display:block;margin-bottom:.4rem;}
+  .story-block p{margin-bottom:1rem;text-align:justify;hyphens:auto;}
+  .story-block .lead-p::first-letter{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:3.1rem;line-height:.85;
+    float:left;padding:.25rem .5rem 0 0;color:var(--red);
+  }
+  .story-media{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:start;margin:1.2rem 0;}
+  .story-media figure{margin:0;}
+  .story-media .photo{aspect-ratio:4/3;}
+  .story-media .photo img{aspect-ratio:4/3;}
+  .story-media .photo.tall{aspect-ratio:4/5;}
+  .story-media .photo.tall img{aspect-ratio:4/5;}
+  .inline-cta{
+    border:2px solid var(--ink);background:var(--paper-2);box-shadow:var(--shadow);
+    padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.6rem 0;
+  }
+  .inline-cta .ic-text{flex:1;min-width:200px;}
+  .inline-cta .ic-text .smallcaps{color:var(--red);display:block;}
+  .inline-cta .ic-text strong{font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;}
+
+  /* letters */
+  .letters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+  .letter{padding:0 1.8rem;}
+  .letter:first-child{padding-left:0;}
+  .letter:last-child{padding-right:0;}
+  .letter + .letter{border-left:1px solid var(--rule);}
+  .letter .stars{color:var(--red);letter-spacing:.25em;font-size:.85rem;margin-bottom:.5rem;}
+  .letter h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;margin-bottom:.6rem;line-height:1.3;}
+  .letter p{font-size:.95rem;margin-bottom:.8rem;}
+  .letter p:first-of-type{font-style:italic;}
+  .letter .byline{font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .letters-foot{margin-top:2rem;display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;}
+
+  /* related classifieds */
+  .classifieds{background:var(--paper-2);border-top:4px double var(--ink);}
+  .classified-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.4rem;}
+  .ad{background:var(--paper-lift);border:2px solid var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;}
+  .ad .photo{aspect-ratio:16/9;border:0;border-bottom:2px solid var(--ink);}
+  .ad .photo img{aspect-ratio:16/9;}
+  .ad-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;}
+  .ad-tag{position:absolute;top:.7rem;left:.7rem;z-index:2;font-family:'Libre Franklin',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-lift);padding:.3rem .55rem;border:1px solid rgba(250,245,230,.4);}
+  .tag-orange{background:var(--orange);} .tag-magenta{background:var(--magenta);} .tag-dark{background:#111;}
+  .ad h3{font-family:'Playfair Display',serif;font-weight:900;font-size:1.32rem;line-height:1.15;margin-bottom:.4rem;}
+  .ad .ad-meta{font-family:'Libre Franklin',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);line-height:1.9;border-top:1px dotted var(--rule);border-bottom:1px dotted var(--rule);padding:.45rem 0;margin:.5rem 0 .7rem;}
+  .ad .blurb{font-size:.92rem;margin-bottom:1rem;flex:1;}
+  .ad .price-line{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.8rem;}
+  .ad .price{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;}
+  .ad .price small{font-family:'Libre Franklin',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+  .ad .stars{font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.06em;color:var(--red);text-transform:uppercase;}
+
+  /* final CTA + footer */
+  .proof-row{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+  .proof-row span{font-family:'Libre Franklin',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.1rem;display:flex;align-items:center;gap:.4rem;}
+  .proof-row span + span{border-left:1px solid var(--rule-soft);}
+  .proof-row .star{color:var(--red);}
+  .final-cta{background:var(--ink);color:var(--paper-lift);border-top:6px double var(--paper);padding:3.6rem 0;}
+  .final-cta .wrap{text-align:center;}
+  .final-cta .kicker{color:#e0906f;}
+  .final-cta h2{font-size:clamp(2rem,5.4vw,3.6rem);margin:.5rem auto 1rem;max-width:800px;color:var(--paper-lift);}
+  .final-cta .deck{color:rgba(250,245,230,.75);max-width:640px;margin:0 auto 1.6rem;}
+  .final-cta .proof-row{border-color:rgba(250,245,230,.3);margin-bottom:2rem;}
+  .final-cta .proof-row span + span{border-color:rgba(250,245,230,.18);}
+  .final-cta .proof-row .star{color:#e0906f;}
+  .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+  footer{background:var(--paper);border-top:4px double var(--ink);padding:2.6rem 0 7rem;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;margin-bottom:2rem;}
+  .foot-brand{font-family:'UnifrakturMaguntia',serif;font-size:2rem;line-height:1;margin-bottom:.6rem;}
+  .foot-motto{font-family:'Playfair Display',serif;font-style:italic;color:var(--ink-soft);margin-bottom:1rem;}
+  footer h4{font-family:'Libre Franklin',sans-serif;font-size:.7rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:.5rem;margin-bottom:.9rem;}
+  .foot-btns{display:flex;flex-wrap:wrap;gap:.55rem;}
+  address{font-style:normal;font-size:.92rem;line-height:1.8;margin-bottom:1rem;}
+  .colophon{border-top:1px solid var(--rule);padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Libre Franklin',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+
+  .book-bar{
+    position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--ink);
+    border-top:2px solid var(--red);padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    display:none;align-items:center;gap:.6rem;
+  }
+  .book-bar .bar-proof{color:var(--paper-lift);font-family:'Libre Franklin',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;flex:1;}
+  .book-bar .bar-proof .star{color:#e0906f;}
+  .book-bar .btn{padding:.65rem .9rem;font-size:.68rem;min-height:44px;}
+  .book-bar .btn-call{border-color:var(--paper-lift);color:var(--paper-lift);background:transparent;box-shadow:none;}
+
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr;}
+    .booking{position:static;order:-1;margin-bottom:2rem;}
+    .route-grid{grid-template-columns:1fr;}
+    .story-media{grid-template-columns:1fr;}
+    .letters-grid{grid-template-columns:1fr;}
+    .letter{padding:1.4rem 0;}
+    .letter + .letter{border-left:0;border-top:1px solid var(--rule);}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .edition-bar span:nth-child(2){display:none;}
+    .book-bar{display:flex;}
+    .nav-actions .btn-call-top{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- edition bar -->
+  <div class="edition-bar">
+    <div class="wrap">
+      <span>Special Evening Edition</span>
+      <span>The Local Paper of Record for the Strange &amp; the Storied</span>
+      <span>Nightly at 7 PM</span>
+    </div>
+  </div>
+
+  <!-- condensed masthead -->
+  <header class="masthead">
+    <div class="wrap">
+      <h1><a href="homepage.html">Freaky Foot Tours</a></h1>
+      <div class="dateline">Flagstaff · Tucson · Prescott · Est. 2015</div>
+    </div>
+  </header>
+
+  <!-- sticky nav -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="homepage.html">FFT</a>
+      <div class="nav-links">
+        <a href="homepage.html#cities">Tours by City</a>
+        <a href="homepage.html#tours">All Tours</a>
+        <a href="homepage.html#stories">Stories</a>
+        <a href="homepage.html#ghost-cities">Ghost Cities</a>
+        <a href="homepage.html#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-call-top" href="tel:+19282240518">☎ (928) 224-0518</a>
+        <a class="btn btn-red" href="#reserve">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- tour hero -->
+  <section class="tour-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="homepage.html">Front Page</a> › <a href="homepage.html#cities">Flagstaff Bureau</a> › Ghost Section</p>
+      <span class="kicker">Special Evening Edition · Downtown Flagstaff</span>
+      <h2 class="headline">The Hotels That Never Checked Their Guests Out</h2>
+      <p class="deck">The Original Flagstaff Ghost Tour. Seventy five minutes, one easy mile, and every stop a building that still keeps the porch light on for somebody who died decades ago.</p>
+      <div class="byline-row">
+        <span><span class="star">★</span> 4.9 TripAdvisor · 5.0 Google</span>
+        <span>Nightly 7 PM · Plus 8 PM Fri &amp; Sat</span>
+        <span>From $22 · Small Group, Max 28</span>
+        <span>Meets at Wheeler Park</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+
+      <!-- story column -->
+      <div class="story-col">
+
+        <figure>
+          <div class="photo mono lede">
+            <img src="../assets/72c1e8e304100b20.jpg" alt="Costumed Victorian guide holding a lantern under an iron trellis arch at night in downtown Flagstaff" width="1300" height="975">
+          </div>
+          <figcaption><b>Lede photo:</b> Your guide, in period dress and lantern light, at the iron arch where the tour turns toward the Monte Vista. Every guide on this route lives in Flagstaff. Staff photo.</figcaption>
+        </figure>
+
+        <!-- route highlights -->
+        <div class="route-box">
+          <h3>On Tonight's Route</h3>
+          <div class="route-grid">
+            <div class="route-stop">
+              <div class="num">01</div>
+              <h4>Hotel Monte Vista</h4>
+              <p>The phantom bellboy who still knocks, and the rooms the front desk gets quiet about.</p>
+            </div>
+            <div class="route-stop">
+              <div class="num">02</div>
+              <h4>Orpheum Theater</h4>
+              <p>A 1917 movie palace where the projectionist's booth never quite emptied out.</p>
+            </div>
+            <div class="route-stop">
+              <div class="num">03</div>
+              <h4>Weatherford Hotel</h4>
+              <p>Flagstaff's grand old hotel, its ballroom, and the guests who never surrendered their keys.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- story: monte vista -->
+        <article class="story-block">
+          <h3><span class="kicker">Stop the Presses · Chapter One</span>The Bellboy Who Still Announces Room Service</h3>
+          <p class="lead-p">The Hotel Monte Vista opened on New Year's Day, 1927, and it has been collecting stories ever since. Ask the night clerk about the phantom bellboy: the crisp knock on the door, the muffled voice announcing room service, and no one in the hallway when the door swings open. Guests have reported him for decades. He is punctual, polite, and thoroughly dead.</p>
+          <p>Your guide will tell you which floor to ask about, which famous Hollywood guests refused to stay a second night, and why the bank downstairs kept its vault door locked long after the bank itself gave up. We start with the Monte Vista because it is the tour in miniature: a beautiful building, a warm lobby, and a history that never fully checked out.</p>
+          <div class="story-media">
+            <figure>
+              <div class="photo mono tall">
+                <img src="../assets/faf2765a1667b285.jpg" alt="Hotel Monte Vista, Flagstaff, portrait view of the historic hotel" width="1040" height="1300">
+              </div>
+              <figcaption><b>The Monte Vista.</b> Open since 1927. Some reservations are apparently permanent.</figcaption>
+            </figure>
+            <figure>
+              <div class="photo mono tall">
+                <img src="../assets/c427f1409b6d83d1.webp" alt="The Orpheum Theater marquee in downtown Flagstaff" width="1600" height="1195">
+              </div>
+              <figcaption><b>The Orpheum Theater.</b> A 1917 movie palace with a stubborn sense of occupancy.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <div class="inline-cta">
+          <div class="ic-text">
+            <span class="smallcaps">★ 4.9 on TripAdvisor · 1,400+ Verified Reviews</span>
+            <strong>Tonight at 7 PM. Max 28 lanterns, er, guests.</strong>
+          </div>
+          <a class="btn btn-red" href="#reserve">Reserve Your Spot · $29</a>
+        </div>
+
+        <!-- story: 1937 cold case -->
+        <article class="story-block">
+          <h3><span class="kicker">From the Archive · Chapter Two</span>The 1937 Cold Case That Still Haunts the Archives</h3>
+          <p class="lead-p">Every town has one case it never solved and never forgot. Flagstaff's dates to 1937, and our co-founder Susan Johnson, the local author who literally wrote the book on haunted Flagstaff, has spent years in the archives with it. She shared the story of the Walkup family murders on national television when Travel Channel's The Dead Files came to town in 2022. On this tour, you get the long version, on the very blocks where it happened.</p>
+          <p>This is the difference between a local tour and a franchise. A chain guide reads a paragraph about 1937. Our guides can tell you what the newspapers printed that week, what the neighbors whispered, and which details never made the official record. History is not a script here. It is a neighbor.</p>
+        </article>
+
+        <!-- story: the walk -->
+        <article class="story-block">
+          <h3><span class="kicker">City Desk · Chapter Three</span>One Easy Mile Under the Mountain Stars</h3>
+          <p class="lead-p">The route covers one mile at a storyteller's pace: 75 minutes, mostly flat, all downtown, with stops timed so nobody is ever rushed past a good ghost. We run rain, snow or starlight, and at 7,000 feet the starlight usually wins. Bring a jacket, bring the family (we recommend 13 and up for the spookier stretches), and bring questions. Our guides love questions.</p>
+          <p>We gather at Wheeler Park, 212 W Aspen Ave, near City Hall, where your guide will be the one in period dress holding a lantern. Hard to miss. From there it is the Monte Vista, the Orpheum, the Weatherford, and a few corners we prefer to surprise you with. You will pass your own hotel and never look at it the same way again.</p>
+          <figure>
+            <div class="photo mono">
+              <img src="../assets/b1c12a844755134a.jpg" alt="Historic Flagstaff train station area at night on the haunted history tour" width="1300" height="866">
+            </div>
+            <figcaption><b>The rail district.</b> The trains still run all night. So, reportedly, do a few former passengers.</figcaption>
+          </figure>
+        </article>
+
+      </div>
+
+      <!-- booking rail -->
+      <aside class="booking" id="reserve">
+        <div class="booking-card">
+          <div class="booking-head">
+            <div class="bh-kicker">Box Office · Reserve Your Lantern</div>
+            <h3>The Original Flagstaff Ghost Tour</h3>
+          </div>
+          <div class="booking-body">
+            <div class="booking-proof">
+              <span class="star">★★★★★</span>
+              4.9 TripAdvisor · 5.0 Google (675+ Reviews)
+            </div>
+            <table class="fares">
+              <tr><td>Adults</td><td>$29</td></tr>
+              <tr><td>Students</td><td>$25</td></tr>
+              <tr><td>Children</td><td>$22</td></tr>
+            </table>
+            <ul class="spec-list">
+              <li><b>Departs</b><span>Nightly 7 PM · 8 PM Fri &amp; Sat</span></li>
+              <li><b>Length</b><span>75 minutes · 1 easy mile</span></li>
+              <li><b>Group</b><span>Small group, max 28</span></li>
+              <li><b>Ages</b><span>All ages · recommended 13+</span></li>
+              <li><b>Meets</b><span>Wheeler Park, 212 W Aspen Ave, Flagstaff (near City Hall)</span></li>
+            </ul>
+            <a class="btn btn-red btn-block" href="#reserve">Book Tonight · Check Dates</a>
+            <a class="btn btn-ink btn-block" href="tel:+19282240518">☎ Call or Text (928) 224-0518</a>
+            <p class="booking-fine">
+              <span class="star">★</span> Full refund 72+ hours before the tour<br>
+              Runs rain, snow or starlight
+            </p>
+            <div class="booking-stamp">
+              <span class="stamp">Locally Owned<br>Est. 2015</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- letters -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Letters From the Route</h2>
+        <span class="kicker">★ 4.9 on TripAdvisor · 1,400+ Verified Reviews</span>
+      </div>
+      <div class="letters-grid">
+        <article class="letter">
+          <div class="stars">★★★★★</div>
+          <h3>"The Monte Vista will never look the same."</h3>
+          <p>To the Editor: We stayed at the Monte Vista the night after the tour, on purpose. Our guide's telling of the bellboy story had the whole group holding its breath. Seventy five minutes felt like twenty.</p>
+          <p class="byline">A Guest Visiting From Denver, CO</p>
+        </article>
+        <article class="letter">
+          <div class="stars">★★★★★</div>
+          <h3>"Real history, real research, real chills."</h3>
+          <p>To the Editor: The 1937 case was the highlight. You can tell this material comes from an author's archive and not a franchise binder. Respectful, factual, and still genuinely creepy.</p>
+          <p class="byline">A History Teacher, Repeat Guest</p>
+        </article>
+        <article class="letter">
+          <div class="stars">★★★★★</div>
+          <h3>"Perfect first night in Flagstaff."</h3>
+          <p>To the Editor: Easy walk, warm guide, great pacing, and we got dinner recommendations that were better than anything online. Book the 7 PM and thank me later.</p>
+          <p class="byline">A Couple Visiting From San Diego, CA</p>
+        </article>
+      </div>
+      <div class="letters-foot">
+        <a class="btn btn-ghost" href="homepage.html#stories">Read More Letters</a>
+        <a class="btn btn-red" href="#reserve">Book the Ghost Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- related classifieds -->
+  <section class="classifieds section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Also in Tonight's Classifieds</h2>
+        <span class="kicker">More Flagstaff Departures</span>
+      </div>
+      <div class="classified-grid">
+        <article class="ad">
+          <span class="ad-tag tag-orange">Flagstaff · History</span>
+          <div class="photo color"><img src="../assets/dd044e2bd9e7388d.webp" alt="Mother Myth of Route 66 mural in Flagstaff" width="1280" height="960"></div>
+          <div class="ad-body">
+            <h3>Route 66 Centennial Walking Tour</h3>
+            <div class="ad-meta">Daily 6 PM · Downtown Flagstaff</div>
+            <p class="blurb">One hundred years of the Mother Road, told at the corner where it still runs through town.</p>
+            <div class="price-line"><span class="price">$35 <small>Adult</small></span><span class="stars">★ 5.0 Google Rated Co.</span></div>
+            <a class="btn btn-red btn-block" href="homepage.html#tours">Book This Tour</a>
+          </div>
+        </article>
+        <article class="ad">
+          <span class="ad-tag tag-magenta">Flagstaff · Art</span>
+          <div class="photo color"><img src="../assets/45d14670c0692e6c.jpg" alt="Mural tour of historic downtown Flagstaff" width="1300" height="731"></div>
+          <div class="ad-body">
+            <h3>Flagstaff Mural Tour</h3>
+            <div class="ad-meta">Thu to Sat 10 AM · Daylight Stroll</div>
+            <p class="blurb">The alleys are the gallery. Meet the walls, the artists, and the Mother Myth of Route 66 herself.</p>
+            <div class="price-line"><span class="price">$29 <small>Adult</small></span><span class="stars">★ 5.0 Google Rated Co.</span></div>
+            <a class="btn btn-red btn-block" href="homepage.html#tours">Book This Tour</a>
+          </div>
+        </article>
+        <article class="ad">
+          <span class="ad-tag tag-dark">Flagstaff · 21+ Only</span>
+          <div class="photo mono"><img src="../assets/aa60d85d9021d0b7.webp" alt="Southside Flagstaff haunted history tour at night" width="1920" height="1080"></div>
+          <div class="ad-body">
+            <h3>Mountain Town of Madness</h3>
+            <div class="ad-meta">Fri &amp; Sat 9 PM · 21+ · Strong Stories</div>
+            <p class="blurb">The stories we cannot tell at 7 PM. Southside's rougher chapters, served late and unfiltered.</p>
+            <div class="price-line"><span class="price">$39 <small>Adult</small></span><span class="stars">★ 5.0 Google Rated Co.</span></div>
+            <a class="btn btn-red btn-block" href="homepage.html#tours">Book This Tour</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- final CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <span class="kicker">Tonight at 7 · Wheeler Park · Look for the Lantern</span>
+      <h2 class="headline">Some Guests Never Check Out. You Should Check In.</h2>
+      <p class="deck">Adults $29, students $25, children $22. Full refund 72+ hours out. Runs rain, snow or starlight.</p>
+      <div class="proof-row">
+        <span><span class="star">★</span> 4.9 TripAdvisor</span>
+        <span><span class="star">★</span> 5.0 Google · 675+ Reviews</span>
+        <span>30,000+ Guests Guided</span>
+      </div>
+      <div class="cta-buttons">
+        <a class="btn btn-red" href="#reserve" style="font-size:.95rem;padding:1.1rem 2.2rem;">Book the Ghost Tour</a>
+        <a class="btn btn-cream-outline" href="tel:+19282240518" style="font-size:.95rem;padding:1.1rem 2.2rem;">☎ Call or Text (928) 224-0518</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">Freaky Foot Tours</div>
+          <p class="foot-motto">"History by day. Haunts by night." Your town's trusted storytellers since 2015.</p>
+          <address>
+            24 N San Francisco St Unit J<br>
+            Flagstaff, AZ 86001
+          </address>
+          <div class="foot-btns">
+            <a class="btn btn-ink btn-sm" href="tel:+19282240518">☎ (928) 224-0518</a>
+            <a class="btn btn-ghost btn-sm" href="mailto:support@freakyfoottours.com">✉ Email the Desk</a>
+          </div>
+        </div>
+        <div>
+          <h4>The Sections</h4>
+          <div class="foot-btns">
+            <a class="btn btn-ghost btn-sm" href="homepage.html#cities">Tours by City</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#tours">All Tours</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#stories">Stories</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#ghost-cities">Ghost Cities</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>The Bureaus</h4>
+          <div class="foot-btns">
+            <a class="btn btn-ghost btn-sm" href="homepage.html#cities">Flagstaff · 6 Tours</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#cities">Tucson · 2 Tours</a>
+            <a class="btn btn-ghost btn-sm" href="homepage.html#cities">Prescott · 2 Tours</a>
+            <a class="btn btn-red btn-sm" href="#reserve">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© 2026 Freaky Foot Tours · Locally Owned, Mother &amp; Son, Est. 2015</span>
+        <span>Printed nightly under the mountain in Flagstaff, Arizona</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- mobile book bar -->
+  <div class="book-bar">
+    <div class="bar-proof"><span class="star">★</span> 4.9 TripAdvisor Rated<br>Tonight 7 PM · From $22</div>
+    <a class="btn btn-call" href="tel:+19282240518">☎ Call</a>
+    <a class="btn btn-red" href="#reserve">Book Now</a>
+  </div>
+
+</body>
+</html>
