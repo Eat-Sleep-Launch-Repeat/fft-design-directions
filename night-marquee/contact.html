@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Private Tours · Talk to a Real Local Human · Freaky Foot Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ THE NIGHT MARQUEE · CONTACT PAGE ============ */
+:root{
+  --ink:#0a0c11;
+  --ink-2:#10131c;
+  --ink-3:#171b27;
+  --paper:#f3ead9;
+  --paper-dim:#c9c0ad;
+  --muted:#948d7d;
+  --gold:#f0b43e;
+  --gold-hi:#ffd97a;
+  --gold-deep:#c08a1f;
+  --teal:#38e2c6;
+  --teal-dim:#1fa38d;
+  --orange:#e07b39;
+  --magenta:#e0559a;
+  --blood:#c8452f;
+  --line:rgba(240,180,62,.22);
+  --line-soft:rgba(243,234,217,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);color:var(--paper);
+  font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+h1,h2,h3,.display{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.03em;line-height:1.02;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;
+  padding:15px 28px;border-radius:10px;text-decoration:none;cursor:pointer;border:0;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+  min-height:48px;white-space:nowrap;
+}
+.btn:active{transform:translateY(1px);}
+.btn:focus-visible,.nav-btn:focus-visible,.foot-btn:focus-visible,.crumb:focus-visible,.contact-tile:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px;}
+.btn-gold{
+  color:#1c1305;
+  background:linear-gradient(180deg,var(--gold-hi) 0%,var(--gold) 55%,#d99a26 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,236,180,.9),
+    0 0 0 1px rgba(255,217,122,.35),
+    0 6px 18px rgba(240,180,62,.32),
+    0 0 46px rgba(240,180,62,.20);
+}
+.btn-gold:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,236,180,.95),
+    0 0 0 1px rgba(255,217,122,.55),
+    0 10px 26px rgba(240,180,62,.42),
+    0 0 70px rgba(240,180,62,.32);
+}
+.btn-teal{
+  color:var(--teal);background:rgba(56,226,198,.06);
+  box-shadow:inset 0 0 0 2px var(--teal-dim),0 0 22px rgba(56,226,198,.14);
+}
+.btn-teal:hover{
+  background:rgba(56,226,198,.14);color:#d8fff7;
+  box-shadow:inset 0 0 0 2px var(--teal),0 0 34px rgba(56,226,198,.30);
+  transform:translateY(-2px);
+}
+.btn-ghost{
+  color:var(--paper);background:rgba(243,234,217,.04);
+  box-shadow:inset 0 0 0 1.5px rgba(243,234,217,.35);
+}
+.btn-ghost:hover{background:rgba(243,234,217,.12);box-shadow:inset 0 0 0 1.5px rgba(243,234,217,.7);transform:translateY(-2px);}
+.btn-sm{padding:10px 18px;font-size:13px;min-height:40px;border-radius:8px;}
+.btn-lg{padding:18px 36px;font-size:16px;border-radius:12px;}
+.btn-block{width:100%;}
+
+/* ---------- Marquee bulbs / kickers ---------- */
+.bulb-row{
+  height:16px;
+  background-image:radial-gradient(circle at 8px 8px,var(--gold-hi) 0 2.6px,rgba(240,180,62,.28) 3.6px,transparent 5px);
+  background-size:30px 16px;background-repeat:repeat-x;background-position:center;
+  animation:bulbglow 2.4s ease-in-out infinite alternate;
+}
+.bulb-row.teal{background-image:radial-gradient(circle at 8px 8px,var(--teal) 0 2.6px,rgba(56,226,198,.25) 3.6px,transparent 5px);}
+@keyframes bulbglow{from{opacity:.55;}to{opacity:1;}}
+@media (prefers-reduced-motion:reduce){.bulb-row{animation:none;}}
+.kicker{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:12.5px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+}
+.kicker::before,.kicker::after{
+  content:"";width:38px;height:2px;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px);opacity:.7;
+}
+.kicker.teal{color:var(--teal);}
+.kicker.teal::before,.kicker.teal::after{background:repeating-linear-gradient(90deg,var(--teal) 0 6px,transparent 6px 12px);}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,12,17,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:18px;padding:12px 22px;max-width:1280px;margin:0 auto;}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;flex:0 0 auto;}
+.logo .name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.06em;color:var(--paper);}
+.logo .name em{font-style:normal;color:var(--gold);text-shadow:0 0 18px rgba(240,180,62,.55);}
+.logo .sub{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.main-nav{display:flex;gap:8px;margin-left:auto;align-items:center;}
+.nav-btn{
+  display:inline-flex;align-items:center;padding:9px 14px;border-radius:8px;
+  font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--paper-dim);text-decoration:none;
+  box-shadow:inset 0 0 0 1px rgba(243,234,217,.14);transition:all .15s ease;white-space:nowrap;
+}
+.nav-btn:hover{color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold);background:rgba(240,180,62,.08);}
+.header-cta{display:flex;gap:10px;align-items:center;margin-left:14px;}
+@media (max-width:1080px){.main-nav{display:none;}}
+@media (max-width:620px){
+  .header-cta .btn-call-head{display:none;}
+  .logo .name{font-size:22px;}
+}
+
+/* ---------- Contact hero ---------- */
+.contact-hero{
+  position:relative;min-height:56vh;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(180deg,rgba(10,12,17,.6) 0%,rgba(10,12,17,.35) 40%,rgba(10,12,17,.82) 74%,var(--ink) 100%),
+    radial-gradient(ellipse at 50% 35%,rgba(240,180,62,.10),transparent 60%),
+    url('../assets/b494803850bc3202.webp') center 40%/cover no-repeat;
+}
+.contact-hero-inner{position:relative;width:100%;padding:120px 0 56px;}
+.crumb-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.crumb{
+  display:inline-flex;align-items:center;padding:7px 13px;border-radius:8px;text-decoration:none;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);
+  background:rgba(10,12,17,.55);box-shadow:inset 0 0 0 1px rgba(243,234,217,.22);transition:all .15s ease;
+}
+.crumb:hover{color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold);}
+.crumb.here{color:var(--teal);box-shadow:inset 0 0 0 1px rgba(56,226,198,.45);}
+.contact-hero h1{
+  font-size:clamp(48px,7vw,96px);max-width:14ch;
+  text-shadow:0 4px 40px rgba(0,0,0,.8);
+}
+.contact-hero h1 .glow{color:var(--gold-hi);text-shadow:0 0 14px rgba(240,180,62,.55),0 0 60px rgba(240,180,62,.4),0 4px 40px rgba(0,0,0,.8);}
+.contact-hero .hero-tag{
+  font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,2.1vw,22px);
+  color:var(--paper-dim);margin:16px 0 22px;max-width:58ch;
+}
+.contact-hero .hero-tag strong{color:var(--paper);font-weight:600;}
+.hero-proof{
+  display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin-bottom:8px;
+  font-size:14.5px;font-weight:600;color:var(--paper);
+}
+.hero-proof .stars{color:var(--gold);letter-spacing:2px;text-shadow:0 0 14px rgba(240,180,62,.6);}
+.hero-proof .sep{color:var(--gold-deep);}
+@media (max-width:640px){.btn{white-space:normal;}}
+
+/* ---------- Main: two columns ---------- */
+.contact-main{padding:76px 0 52px;}
+.contact-cols{display:grid;grid-template-columns:1fr 460px;gap:48px;align-items:start;}
+@media (max-width:1020px){.contact-cols{grid-template-columns:1fr;}}
+
+/* Left: contact methods */
+.reach-col .kicker{margin-bottom:12px;}
+.reach-col h2{font-size:clamp(34px,4vw,50px);margin-bottom:14px;}
+.reach-col h2 .gold{color:var(--gold-hi);text-shadow:0 0 34px rgba(240,180,62,.3);}
+.reach-col > p{color:var(--paper-dim);font-size:16.5px;margin-bottom:26px;max-width:52ch;}
+.contact-tiles{display:grid;gap:14px;margin-bottom:34px;}
+.contact-tile{
+  display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:14px;text-decoration:none;
+  background:linear-gradient(180deg,var(--ink-3),var(--ink-2));
+  box-shadow:inset 0 0 0 1px var(--line-soft),0 14px 34px rgba(0,0,0,.4);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.contact-tile:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--line),0 20px 44px rgba(0,0,0,.55),0 0 40px rgba(240,180,62,.1);}
+.contact-tile .t-ico{
+  flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--gold-hi);background:rgba(240,180,62,.1);
+  box-shadow:inset 0 0 0 1px var(--line),0 0 22px rgba(240,180,62,.14);
+  text-shadow:0 0 14px rgba(240,180,62,.6);
+}
+.contact-tile.tucson .t-ico{color:var(--teal);background:rgba(56,226,198,.08);box-shadow:inset 0 0 0 1px rgba(56,226,198,.35),0 0 22px rgba(56,226,198,.12);text-shadow:0 0 14px rgba(56,226,198,.55);}
+.contact-tile .t-body{flex:1;min-width:0;}
+.contact-tile .t-label{font-size:11.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);}
+.contact-tile .t-value{font-family:'Bebas Neue',sans-serif;font-size:27px;color:var(--paper);letter-spacing:.03em;line-height:1.1;margin-top:2px;overflow-wrap:anywhere;}
+.contact-tile .t-sub{font-size:13px;color:var(--paper-dim);}
+.contact-tile .t-go{
+  flex:0 0 auto;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  padding:9px 14px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line);white-space:nowrap;
+}
+.contact-tile:hover .t-go{color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold);background:rgba(240,180,62,.08);}
+@media (max-width:560px){.contact-tile .t-go{display:none;}}
+
+/* Office plate */
+.office-plate{
+  border-radius:14px;padding:20px 22px;margin-bottom:34px;
+  background:rgba(243,234,217,.035);
+  border-left:3px solid var(--gold);
+  box-shadow:inset 0 0 0 1px var(--line-soft);
+}
+.office-plate .o-label{font-size:11.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.office-plate .o-addr{font-family:'Fraunces',serif;font-size:18px;color:var(--paper);}
+.office-plate .o-sub{font-size:13.5px;color:var(--paper-dim);margin-top:4px;}
+
+/* Private tours pitch */
+.private-card{
+  border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,#1a1420,#120f18);
+  box-shadow:inset 0 0 0 1px var(--line),inset 0 0 50px rgba(240,180,62,.05),0 20px 50px rgba(0,0,0,.55);
+}
+.private-media{position:relative;aspect-ratio:16/8;overflow:hidden;}
+.private-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.06) brightness(.9);}
+.private-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(18,15,24,.95));}
+.private-media .cap{
+  position:absolute;left:12px;bottom:12px;z-index:2;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);
+  background:rgba(10,12,17,.78);padding:7px 12px;border-radius:7px;
+  box-shadow:inset 0 0 0 1px var(--line);
+}
+.private-body{padding:24px;}
+.private-body h3{font-size:32px;color:var(--paper);margin-bottom:10px;}
+.private-body h3 .gold{color:var(--gold-hi);text-shadow:0 0 24px rgba(240,180,62,.4);}
+.private-body p{color:var(--paper-dim);font-size:15px;margin-bottom:16px;}
+.private-body p b{color:var(--paper);}
+.private-proof{
+  font-size:13.5px;font-weight:600;color:var(--paper-dim);margin-bottom:18px;
+}
+.private-proof .stars{color:var(--gold);text-shadow:0 0 12px rgba(240,180,62,.55);}
+.private-actions{display:flex;flex-wrap:wrap;gap:10px;}
+
+/* Right: form as the ticket window */
+.form-col{position:sticky;top:92px;}
+@media (max-width:1020px){.form-col{position:static;}}
+.form-card{
+  border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,#1a1420,#120f18);
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    inset 0 0 50px rgba(240,180,62,.05),
+    0 24px 60px rgba(0,0,0,.6),
+    0 0 60px rgba(240,180,62,.08);
+}
+.form-head{
+  padding:16px 22px 14px;text-align:center;
+  background:linear-gradient(180deg,rgba(240,180,62,.14),rgba(240,180,62,.03));
+  border-bottom:1px dashed rgba(240,180,62,.4);
+}
+.form-head .fh-kicker{font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+.form-head .fh-title{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--paper);margin-top:2px;}
+.form-body{padding:22px;}
+.field{margin-bottom:14px;}
+.field label{
+  display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 14px;border-radius:9px;border:0;
+  background:rgba(243,234,217,.05);color:var(--paper);
+  font-family:'Inter',sans-serif;font-size:15px;
+  box-shadow:inset 0 0 0 1px rgba(243,234,217,.18);
+  transition:box-shadow .15s ease,background .15s ease;
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;background:rgba(240,180,62,.06);
+  box-shadow:inset 0 0 0 1.5px var(--gold),0 0 22px rgba(240,180,62,.16);
+}
+.field select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 49%,var(--gold) 50%,transparent 60%),linear-gradient(135deg,transparent 49%,var(--gold) 50%,transparent 60%);
+  background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;
+  background-size:6px 6px;background-repeat:no-repeat;
+}
+.field select option{background:var(--ink-2);color:var(--paper);}
+.field textarea{min-height:110px;resize:vertical;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media (max-width:520px){.field-row{grid-template-columns:1fr;}}
+.form-proof{
+  text-align:center;font-size:13px;font-weight:600;color:var(--paper-dim);margin-top:12px;
+}
+.form-proof .stars{color:var(--gold);text-shadow:0 0 12px rgba(240,180,62,.55);}
+.form-fine{
+  margin-top:14px;padding-top:14px;border-top:1px dashed rgba(240,180,62,.3);
+  font-size:12.5px;color:var(--muted);text-align:center;
+}
+.form-fine b{color:var(--paper-dim);}
+
+/* ---------- Final CTA ---------- */
+.final-cta{
+  position:relative;padding:120px 0;text-align:center;
+  background:
+    linear-gradient(180deg,var(--ink) 0%,rgba(10,12,17,.72) 22%,rgba(10,12,17,.62) 60%,var(--ink) 100%),
+    url('../assets/e42e3b0af201ae42.webp') center 26%/cover no-repeat;
+}
+.final-cta h2{font-size:clamp(44px,6vw,80px);text-shadow:0 4px 40px rgba(0,0,0,.8);}
+.final-cta h2 .glow{color:var(--gold-hi);text-shadow:0 0 16px rgba(240,180,62,.55),0 0 70px rgba(240,180,62,.4);}
+.final-cta p{color:var(--paper-dim);font-size:18px;max-width:56ch;margin:16px auto 12px;}
+.final-proof{color:var(--paper);font-size:14.5px;font-weight:600;margin-bottom:30px;}
+.final-proof .stars{color:var(--gold);text-shadow:0 0 14px rgba(240,180,62,.6);}
+.final-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+@media (max-width:640px){.final-actions .btn{width:min(100%,360px);}}
+
+/* ---------- Footer ---------- */
+.site-footer{background:#07080c;border-top:1px solid var(--line);padding:60px 0 120px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:38px;}
+.footer-brand .name{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--paper);}
+.footer-brand .name em{font-style:normal;color:var(--gold);}
+.footer-brand p{color:var(--muted);font-size:14px;margin:10px 0 18px;max-width:32ch;}
+.footer-col h4{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:9px;align-items:flex-start;}
+.foot-btn{
+  display:inline-flex;padding:8px 14px;border-radius:8px;text-decoration:none;
+  font-size:13.5px;font-weight:600;color:var(--paper-dim);
+  box-shadow:inset 0 0 0 1px rgba(243,234,217,.12);transition:all .15s ease;
+}
+.foot-btn:hover{color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold);background:rgba(240,180,62,.07);}
+.footer-contact .btn{margin-bottom:10px;}
+.footer-legal{
+  margin-top:46px;padding-top:22px;border-top:1px solid var(--line-soft);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted);font-size:12.5px;
+}
+@media (max-width:920px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ---------- Mobile book bar ---------- */
+.book-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;
+  background:rgba(10,12,17,.96);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+}
+.book-bar-inner{display:flex;gap:10px;align-items:center;}
+.book-bar .microproof{flex:0 0 auto;font-size:11px;line-height:1.3;color:var(--paper-dim);font-weight:600;max-width:100px;}
+.book-bar .microproof .stars{color:var(--gold);}
+.book-bar .btn{flex:1;padding:13px 10px;font-size:13.5px;}
+@media (max-width:860px){.book-bar{display:block;}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="homepage.html">
+      <span class="name">FREAKY <em>FOOT</em> TOURS</span>
+      <span class="sub">Arizona's Trusted Storytellers</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a class="nav-btn" href="city.html">Tours by City</a>
+      <a class="nav-btn" href="tours.html">All Tours</a>
+      <a class="nav-btn" href="stories.html">Stories</a>
+      <a class="nav-btn" href="ghost-cities.html">Ghost Cities</a>
+      <a class="nav-btn" href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-teal btn-sm btn-call-head" href="tel:+19282240518">Call (928) 224-0518</a>
+      <a class="btn btn-gold btn-sm" href="tours.html">Book Now</a>
+    </div>
+  </div>
+  <div class="bulb-row" aria-hidden="true"></div>
+</header>
+
+<!-- ============ CONTACT HERO ============ -->
+<section class="contact-hero">
+  <div class="contact-hero-inner">
+    <div class="wrap">
+      <div class="crumb-row">
+        <a class="crumb" href="homepage.html">Home</a>
+        <span class="crumb here">Contact &amp; Private Tours</span>
+      </div>
+      <h1>TALK TO A REAL <span class="glow">LOCAL HUMAN</span></h1>
+      <p class="hero-tag"><strong>No call centers, no scripts.</strong> Private tours, group rates, school groups, bachelorette parties, press inquiries, or a ghost story of your own that needs telling. The person who answers lives here.</p>
+      <div class="hero-proof">
+        <span><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+        <span class="sep">·</span>
+        <span>30,000+ guests guided</span>
+        <span class="sep">·</span>
+        <span>Locally owned since 2015</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bulb-row teal" aria-hidden="true"></div>
+
+<!-- ============ MAIN: REACH US + FORM ============ -->
+<div class="contact-main">
+  <div class="wrap">
+    <div class="contact-cols">
+
+      <!-- Left: contact methods -->
+      <div class="reach-col">
+        <span class="kicker">The Box Office Window</span>
+        <h2>FASTEST WAY IN: <span class="gold">CALL OR TEXT.</span></h2>
+        <p>We answer our own phones between tours. If we are out walking a group past the Monte Vista, leave a message or text and a real guide gets back to you the same day.</p>
+
+        <div class="contact-tiles">
+          <a class="contact-tile" href="tel:+19282240518">
+            <span class="t-ico" aria-hidden="true">✆</span>
+            <span class="t-body">
+              <span class="t-label">Call or Text · Flagstaff &amp; Prescott</span>
+              <span class="t-value">(928) 224-0518</span>
+              <span class="t-sub">Ghost, history, mural and Route 66 tours</span>
+            </span>
+            <span class="t-go">Tap to Call</span>
+          </a>
+          <a class="contact-tile tucson" href="tel:+15202205616">
+            <span class="t-ico" aria-hidden="true">✆</span>
+            <span class="t-body">
+              <span class="t-label">Tucson Line · Call or Text</span>
+              <span class="t-value">(520) 220-5616</span>
+              <span class="t-sub">Tucson Ghost Tour and Tucson Mural Tour</span>
+            </span>
+            <span class="t-go">Tap to Call</span>
+          </a>
+          <a class="contact-tile" href="mailto:support@freakyfoottours.com">
+            <span class="t-ico" aria-hidden="true">✉</span>
+            <span class="t-body">
+              <span class="t-label">Email · All Cities</span>
+              <span class="t-value">support@freakyfoottours.com</span>
+              <span class="t-sub">Groups, press, gift questions, lost and found</span>
+            </span>
+            <span class="t-go">Tap to Email</span>
+          </a>
+        </div>
+
+        <div class="office-plate">
+          <div class="o-label">The Office</div>
+          <div class="o-addr">24 N San Francisco St Unit J, Flagstaff, AZ 86001</div>
+          <div class="o-sub">Half a block off Route 66 in historic downtown Flagstaff. If the lanterns are lit, someone is home.</div>
+        </div>
+
+        <div class="private-card">
+          <div class="private-media">
+            <img src="../assets/e42e3b0af201ae42.webp" alt="Two costumed Freaky Foot Tours guides in top hats and skull masks holding glowing lanterns at night" loading="lazy">
+            <span class="cap">Your Guides · Booked Privately</span>
+          </div>
+          <div class="private-body">
+            <h3>YOUR OWN GUIDE. YOUR OWN <span class="gold">LANTERN.</span></h3>
+            <p><b>Private tours are our favorite bookings.</b> Bachelorette parties that want the 1917 Orpheum to themselves. School groups doing Route 66 history for the centennial. Company outings, birthdays, ghost-hunting anniversaries. We build the route around your group in Flagstaff, Tucson or Prescott, and group rates kick in fast.</p>
+            <p class="private-proof"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews · 30,000+ guests guided · Best of Flagstaff, Guided Tour Company (2023)</p>
+            <div class="private-actions">
+              <a class="btn btn-gold" href="#inquire">Request a Private Tour</a>
+              <a class="btn btn-teal" href="tel:+19282240518">Call (928) 224-0518</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: inquiry form -->
+      <aside class="form-col" id="inquire">
+        <form class="form-card" action="#" method="post">
+          <div class="form-head">
+            <div class="fh-kicker">Send a Note</div>
+            <div class="fh-title">TELL US ABOUT YOUR GROUP</div>
+          </div>
+          <div class="form-body">
+            <div class="field">
+              <label for="f-name">Your Name</label>
+              <input type="text" id="f-name" name="name" placeholder="First and last name" autocomplete="name">
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-city">Which City</label>
+                <select id="f-city" name="city">
+                  <option value="">Choose a city</option>
+                  <option value="flagstaff">Flagstaff</option>
+                  <option value="tucson">Tucson</option>
+                  <option value="prescott">Prescott</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-size">Group Size</label>
+                <input type="text" id="f-size" name="group_size" placeholder="How many walkers?">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-dates">Preferred Dates</label>
+                <input type="text" id="f-dates" name="dates" placeholder="e.g. Oct 17 or 18">
+              </div>
+              <div class="field">
+                <label for="f-occasion">Occasion</label>
+                <select id="f-occasion" name="occasion">
+                  <option value="">What brings you?</option>
+                  <option value="private">Private tour</option>
+                  <option value="bachelorette">Bachelorette or bachelor party</option>
+                  <option value="school">School or student group</option>
+                  <option value="corporate">Company or team outing</option>
+                  <option value="birthday">Birthday or anniversary</option>
+                  <option value="press">Press or media</option>
+                  <option value="story">I have a ghost story for you</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" placeholder="Tell us the plan. Or the story. We read every word."></textarea>
+            </div>
+            <button class="btn btn-gold btn-lg btn-block" type="submit">Send It · We Reply Same Day</button>
+            <p class="form-proof"><span class="stars">★★★★★</span> 4.9 TripAdvisor · 1,400+ verified reviews</p>
+            <div class="form-fine"><b>Prefer a voice?</b> Call or text (928) 224-0518 and skip the form entirely.</div>
+          </div>
+        </form>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="wrap">
+    <span class="kicker" style="justify-content:center;">Or Just Come Walk With Us</span>
+    <h2>DON'T WAIT FOR A REPLY.<br><span class="glow">BOOK TONIGHT.</span></h2>
+    <p>Ten tours across Flagstaff, Tucson and Prescott, most departing tonight. Grab a public spot now and sort the private party details with us tomorrow.</p>
+    <p class="final-proof"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews · 30,000+ guests guided · full refund 72+ hours out</p>
+    <div class="final-actions">
+      <a class="btn btn-gold btn-lg" href="tours.html">See All Tours</a>
+      <a class="btn btn-teal btn-lg" href="tel:+19282240518">Call or Text (928) 224-0518</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">FREAKY <em>FOOT</em> TOURS</div>
+        <p>Arizona's Trusted Storytellers. Locally owned since 2015. History by day. Haunts by night.</p>
+        <p style="color:var(--paper-dim);font-size:13.5px;">24 N San Francisco St Unit J<br>Flagstaff, AZ 86001</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tours by City</h4>
+        <div class="footer-links">
+          <a class="foot-btn" href="city.html">Flagstaff · 6 Tours</a>
+          <a class="foot-btn" href="tours.html#tucson">Tucson · 2 Tours</a>
+          <a class="foot-btn" href="tours.html#prescott">Prescott · 2 Tours</a>
+          <a class="foot-btn" href="tours.html">All Tours</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a class="foot-btn" href="stories.html">Stories</a>
+          <a class="foot-btn" href="ghost-cities.html">Ghost Cities</a>
+          <a class="foot-btn" href="homepage.html#reviews">Reviews</a>
+          <a class="foot-btn" href="homepage.html#faq">FAQs</a>
+        </div>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Book Tonight</h4>
+        <a class="btn btn-gold btn-sm btn-block" href="tours.html">Book Now</a>
+        <a class="btn btn-teal btn-sm btn-block" href="tel:+19282240518">(928) 224-0518</a>
+        <a class="btn btn-ghost btn-sm btn-block" href="mailto:support@freakyfoottours.com">Email Us</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Freaky Foot Tours · Flagstaff, Tucson &amp; Prescott, Arizona</span>
+      <span>Best of Flagstaff 2023 · Featured on Travel Channel's The Dead Files</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE BOOK BAR ============ -->
+<div class="book-bar" role="region" aria-label="Quick booking">
+  <div class="book-bar-inner">
+    <div class="microproof"><span class="stars">★★★★★</span> 5.0 Google<br>675+ reviews</div>
+    <a class="btn btn-teal" href="tel:+19282240518">Call</a>
+    <a class="btn btn-gold" href="tours.html">Book Tonight</a>
+  </div>
+</div>
+
+<script>
+/* Progressive polish only: page is fully usable with JS off. */
+(function(){
+  var h=document.querySelector('.site-header');
+  if(!h)return;
+  var onScroll=function(){
+    h.style.boxShadow=window.scrollY>40?'0 10px 30px rgba(0,0,0,.55)':'none';
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
