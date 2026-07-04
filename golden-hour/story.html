@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Notorious Walkup Family Tragedy · Stories · Freaky Foot Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dusk:#0E1E33;
+    --dusk-deep:#08131F;
+    --dusk-soft:#1B3450;
+    --amber:#F2A33C;
+    --amber-hot:#E08615;
+    --amber-soft:#FCE3B8;
+    --cream:#FBF7EF;
+    --paper:#FFFFFF;
+    --ink:#17202F;
+    --muted:#5B667A;
+    --line:#E8E0D2;
+    --teal:#1F7E77;
+    --orange:#B54F14;
+    --magenta:#A63272;
+    --gold:#8F6A1A;
+    --radius:20px;
+    --shadow-lg:0 24px 60px -18px rgba(8,19,31,.35);
+    --shadow-md:0 12px 30px -12px rgba(8,19,31,.28);
+    --shadow-btn:0 10px 24px -8px rgba(224,134,21,.55);
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);line-height:1.12;letter-spacing:-.01em}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .kicker{font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#A85F00}
+  .kicker.on-dark{color:var(--amber)}
+
+  /* ---------- Buttons & chips (shared system) ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font:700 15.5px/1 var(--sans);padding:17px 30px;cursor:pointer;border:2px solid transparent;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease;white-space:nowrap;min-height:52px}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--amber-hot);outline-offset:2px}
+  .btn-book{background:linear-gradient(180deg,var(--amber),var(--amber-hot));color:var(--dusk-deep);box-shadow:var(--shadow-btn)}
+  .btn-book:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(224,134,21,.65)}
+  .btn-ghost-light{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-2px)}
+  .btn-ghost-dark{background:#fff;color:var(--dusk);border-color:var(--dusk)}
+  .btn-ghost-dark:hover{background:var(--dusk);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-dark{background:var(--dusk);color:#fff;box-shadow:var(--shadow-md)}
+  .btn-dark:hover{background:var(--dusk-soft);transform:translateY(-2px)}
+  .btn-sm{padding:13px 22px;font-size:14px;min-height:44px}
+  .btn-block{width:100%}
+  .btn .ico{font-size:1.05em;line-height:0}
+  .chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:8px 15px;font:600 13px/1.2 var(--sans)}
+  .chip-glass{background:rgba(8,19,31,.55);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+  .chip-cream{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:0 4px 14px -8px rgba(8,19,31,.25)}
+  .stars{color:var(--amber);letter-spacing:1.5px;font-size:13px}
+
+  /* ---------- Header ---------- */
+  .site-head{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(8,19,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+  .site-head .wrap{display:flex;align-items:center;gap:26px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff}
+  .brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--amber),var(--amber-hot));display:grid;place-items:center;font-size:21px;box-shadow:0 6px 16px -6px rgba(224,134,21,.7)}
+  .brand-name{font:700 17px/1.15 var(--serif);letter-spacing:.01em}
+  .brand-name small{display:block;font:600 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+  .nav{display:flex;gap:4px;margin-left:auto}
+  .nav a{color:rgba(255,255,255,.88);font:600 14px/1 var(--sans);padding:11px 15px;border-radius:999px;border:1px solid transparent;transition:.15s}
+  .nav a:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+  .head-actions{display:flex;gap:10px;align-items:center}
+  .head-actions .btn-call{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .head-actions .btn-call:hover{background:rgba(255,255,255,.22);border-color:#fff}
+
+  /* ---------- Story hero ---------- */
+  .a-hero{min-height:76vh;display:flex;align-items:flex-end;color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.55) 0%,rgba(8,19,31,.28) 35%,rgba(8,19,31,.74) 70%,rgba(8,19,31,.96) 100%),
+    url('../assets/72c1e8e304100b20.jpg') center 26%/cover no-repeat var(--dusk-deep)}
+  .a-hero .wrap{padding-top:140px;padding-bottom:56px;width:100%}
+  .crumbs{font:600 13px/1 var(--sans);color:rgba(255,255,255,.7);margin-bottom:18px}
+  .crumbs a:hover{color:#fff;text-decoration:underline}
+  .a-hero h1{font-size:clamp(36px,5.2vw,62px);font-weight:600;max-width:18ch;margin:14px 0 16px}
+  .a-hero h1 em{font-style:italic;color:var(--amber)}
+  .a-hero .sub{font-size:clamp(16px,1.5vw,19px);color:rgba(255,255,255,.88);max-width:58ch;margin-bottom:24px}
+  .a-hero .hero-proof{display:flex;flex-wrap:wrap;gap:10px}
+
+  /* ---------- Article layout ---------- */
+  .article{padding:64px 0 80px}
+  .art-col{max-width:760px;margin:0 auto}
+  .dateline{display:flex;flex-wrap:wrap;align-items:center;gap:14px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:34px}
+  .dateline .dl-mark{width:46px;height:46px;border-radius:14px;background:var(--dusk);color:var(--amber);display:grid;place-items:center;font-size:21px}
+  .dateline .dl-txt{font:600 13px/1.5 var(--sans);color:var(--muted)}
+  .dateline .dl-txt b{display:block;color:var(--ink);font-size:14px}
+  .dateline .dl-tags{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .art-col p{font-size:17.5px;line-height:1.75;color:#2A3446;margin-bottom:26px}
+  .art-col p b{color:var(--ink)}
+  .art-col p:first-of-type::first-letter{font-family:var(--serif);font-size:64px;line-height:.85;float:left;padding:6px 12px 0 0;color:var(--amber-hot);font-weight:600}
+  .art-col h2{font-size:clamp(24px,3vw,32px);font-weight:600;margin:38px 0 16px}
+
+  .pullquote{border-left:5px solid var(--amber);background:var(--paper);border-radius:0 var(--radius) var(--radius) 0;box-shadow:0 10px 28px -18px rgba(8,19,31,.3);padding:30px 34px;margin:36px 0}
+  .pullquote q{display:block;font:500 italic 21px/1.55 var(--serif);color:var(--dusk);margin-bottom:12px}
+  .pullquote .src{font:600 12.5px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  .story-fig{margin:36px 0}
+  .story-fig img{border-radius:var(--radius);box-shadow:var(--shadow-md);width:100%;object-fit:cover}
+  .story-fig figcaption{font:500 12.5px/1.5 var(--sans);color:var(--muted);padding:10px 4px 0}
+
+  .respect-note{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:34px 0;font:500 14.5px/1.6 var(--sans);color:var(--muted);display:flex;gap:14px;align-items:flex-start}
+  .respect-note .rn-ico{flex:0 0 34px;height:34px;border-radius:999px;background:var(--amber-soft);color:var(--amber-hot);display:grid;place-items:center;font-size:16px}
+  .respect-note b{color:var(--ink)}
+
+  /* ---------- Conversion module ---------- */
+  .stand{margin:52px 0 0;background:var(--dusk);color:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:.95fr 1.05fr}
+  .stand .sm{position:relative;min-height:340px;background:url('../assets/aa60d85d9021d0b7.webp') center 45%/cover no-repeat var(--dusk-deep)}
+  .stand .sm::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,30,51,0) 45%,rgba(14,30,51,.96) 100%)}
+  .stand .sm .tc-price{position:absolute;top:16px;left:16px;background:#fff;color:var(--dusk);border-radius:999px;padding:8px 15px;font:800 15px/1 var(--sans);box-shadow:0 6px 16px -6px rgba(8,19,31,.5)}
+  .stand .sm .tc-price small{font-weight:600;color:var(--muted);font-size:11px}
+  .stand .sb{padding:38px 40px;display:flex;flex-direction:column;justify-content:center;gap:13px}
+  .stand h2{font-size:clamp(24px,2.9vw,34px);font-weight:600}
+  .stand h2 em{font-style:italic;color:var(--amber)}
+  .stand p{color:rgba(255,255,255,.86);font-size:15.5px;max-width:52ch}
+  .stand .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font:600 13.5px/1.5 var(--sans);color:rgba(255,255,255,.85)}
+  .stand .meta span{display:inline-flex;align-items:center;gap:7px}
+  .stand .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
+
+  /* ---------- Related pills ---------- */
+  .related{padding:64px 0 84px}
+  .related .sec-head{max-width:760px;margin:0 auto 26px;text-align:center}
+  .related h2{font-size:clamp(26px,3.4vw,38px);font-weight:600;margin:12px 0 8px}
+  .rel-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:900px;margin:0 auto}
+  .rel-pill{display:inline-flex;align-items:center;gap:9px;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:13px 22px;font:600 14px/1.3 var(--sans);color:var(--ink);box-shadow:0 6px 18px -12px rgba(8,19,31,.3);transition:transform .15s ease,border-color .15s ease}
+  .rel-pill:hover{transform:translateY(-2px);border-color:var(--dusk)}
+  .rel-pill .rp-ico{color:var(--amber-hot)}
+
+  /* ---------- Final CTA ---------- */
+  .final{color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.78),rgba(8,19,31,.55) 45%,rgba(8,19,31,.85)),
+    url('../assets/e42e3b0af201ae42.webp') center/cover no-repeat var(--dusk-deep);
+    padding:120px 0;text-align:center}
+  .final h2{font-size:clamp(34px,5vw,58px);font-weight:600;max-width:20ch;margin:14px auto 16px}
+  .final h2 em{font-style:italic;color:var(--amber)}
+  .final p{color:rgba(255,255,255,.86);max-width:52ch;margin:0 auto 30px;font-size:17px}
+  .final .hero-proof{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}
+  .final .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dusk-deep);color:rgba(255,255,255,.78);padding:64px 0 120px;font-size:14px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:44px}
+  .foot-grid h4{font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .foot-grid ul{list-style:none;display:grid;gap:10px}
+  .foot-grid a:hover{color:#fff;text-decoration:underline}
+  .foot-brand p{margin:14px 0 20px;max-width:34ch}
+  .foot-cta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+  .foot-legal{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+  /* ---------- Mobile book bar ---------- */
+  .book-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;background:rgba(8,19,31,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.14);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .book-bar .meta{color:#fff;font:600 12px/1.35 var(--sans);flex:1;min-width:0}
+  .book-bar .meta .stars{font-size:11px}
+  .book-bar .btn{min-height:48px;padding:13px 20px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1020px){
+    .nav{display:none}
+    .head-actions .btn-call span.lbl{display:none}
+    .stand{grid-template-columns:1fr}
+    .stand .sm{min-height:240px}
+    .stand .sm::after{background:linear-gradient(180deg,rgba(14,30,51,0) 40%,rgba(14,30,51,.96) 100%)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .site-head .wrap{height:66px;gap:12px}
+    .brand-name{font-size:15px}
+    .a-hero{min-height:66vh}
+    .a-hero .wrap{padding-top:110px;padding-bottom:44px}
+    .dateline .dl-tags{margin-left:0}
+    .art-col p{font-size:16.5px}
+    .pullquote{padding:24px 22px}
+    .stand .sb{padding:28px 24px}
+    .foot-grid{grid-template-columns:1fr}
+    .book-bar{display:flex;align-items:center}
+    footer{padding-bottom:150px}
+    .head-actions .btn-book-head{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="homepage.html">
+      <span class="brand-mark">👣</span>
+      <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="city.html">Tours by City</a>
+      <a href="tours.html">All Tours</a>
+      <a href="stories.html">Stories</a>
+      <a href="ghost-cities.html">Ghost Cities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="btn btn-sm btn-call" href="tel:+19282240518"><span class="ico">📞</span><span class="lbl">(928) 224-0518</span></a>
+      <a class="btn btn-sm btn-book btn-book-head" href="tour.html">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STORY HERO ============ -->
+<section class="a-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="homepage.html">Home</a> / <a href="stories.html">Stories</a> / The Notorious Walkup Family Tragedy</p>
+    <span class="kicker on-dark">Flagstaff · True Crime · From the Record</span>
+    <h1>The Notorious <em>Walkup Family Tragedy</em></h1>
+    <p class="sub">Summer 1937, Flagstaff. The heaviest story we tell on the Flagstaff ghost tour, researched from the record and told with respect.</p>
+    <div class="hero-proof">
+      <span class="chip chip-glass">📖 Researched by local author Susan Johnson</span>
+      <span class="chip chip-glass">📺 Shared on Travel Channel's The Dead Files (2022)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTICLE ============ -->
+<main class="article">
+  <div class="wrap">
+    <article class="art-col">
+
+      <div class="dateline">
+        <span class="dl-mark">🕯</span>
+        <span class="dl-txt"><b>By The Freaky Foot Tours research desk</b>Flagstaff, Arizona · The events described took place in the summer of 1937</span>
+        <span class="dl-tags">
+          <span class="chip chip-cream">Flagstaff</span>
+          <span class="chip chip-cream">True Crime</span>
+        </span>
+      </div>
+
+      <p>Every town has one story it lowers its voice to tell. In Flagstaff, that story belongs to the summer of 1937, when Marie Walkup took the lives of her four children and then her own. Nearly ninety years later it remains the darkest chapter in the town's memory, and the heaviest stop on the Flagstaff ghost tour.</p>
+
+      <p>We want to be plain about what this story is and what it is not. It is not a campfire tale, and we do not treat it like one. A mother and four children died, in a real house, in a real town, in a summer their neighbors never forgot. When a story costs that much, we believe you owe it the discipline of the record: the documents, the newspaper accounts, the dates that can be checked.</p>
+
+      <p>That discipline is where Susan Johnson comes in. Susan, co-founder of Freaky Foot Tours and the local author who wrote the book on haunted Flagstaff, spent years researching the Walkup case, working from the archival record rather than the rumors that inevitably grow around a tragedy of this size. What we tell on the tour is what her research supports, and where the record goes quiet, so do we.</p>
+
+      <div class="pullquote">
+        <q>Freaky Foot Tours owner Nick Jones undergoes some paranormal testing and local author Susan Johnson shares the story of the 1937 Walkup family murders.</q>
+        <span class="src">Arizona Daily Sun · March 2022 · on Travel Channel's The Dead Files</span>
+      </div>
+
+      <p>In 2022, that research reached a national audience. Travel Channel's The Dead Files came to Flagstaff and filmed here, and Susan shared the Walkup story on the program. It was a strange kind of milestone: a case the town had spent decades keeping at the edge of conversation, told carefully, on the record, to millions.</p>
+
+      <figure class="story-fig">
+        <img src="../assets/b1c12a844755134a.jpg" alt="Downtown Flagstaff near the train station" loading="lazy">
+        <figcaption>Downtown Flagstaff. In 1937 this was a small mountain railroad town, and everyone knew everyone.</figcaption>
+      </figure>
+
+      <p>On the tour, the Walkup story comes near the end of the night, and our guides handle it differently than every other stop. There are no theatrics, no gore and no jump scares. We tell you what is documented: what happened in the summer of 1937, how the town responded, and why Flagstaff still speaks of it quietly. Then we let the silence do what silence does.</p>
+
+      <p>Guests sometimes ask why we include it at all. The answer is that leaving it out felt worse. This is the town's history, and pretending otherwise would make the rest of our stories cheaper. Told from the record, with respect, it becomes what it should be: an act of remembering, for a mother and four children whose names deserve better than a whisper and a shudder.</p>
+
+      <div class="respect-note">
+        <span class="rn-ico">✦</span>
+        <span><b>How we tell this one.</b> The full account, with the documentation behind it, is shared in person on The Original Flagstaff Ghost Tour. We keep it factual and respectful, and guides are always glad to talk afterward if the story sits heavy.</span>
+      </div>
+
+      <!-- ============ STAND WHERE THIS HAPPENED ============ -->
+      <aside class="stand" aria-label="Book the Flagstaff ghost tour">
+        <div class="sm" role="img" aria-label="Southside Flagstaff haunted history walk at night">
+          <span class="tc-price">$29 <small>/ adult</small></span>
+        </div>
+        <div class="sb">
+          <span class="kicker on-dark">Stand Where This Happened</span>
+          <h2>Hear the full story <em>on the streets it belongs to</em></h2>
+          <p>The Original Flagstaff Ghost Tour covers the Walkup case and a century of the town's other unquiet history. Nightly at 7 PM from Wheeler Park, 212 W Aspen Ave. 75 minutes, 1 easy mile.</p>
+          <div class="meta"><span>🌙 Nightly 7 PM · + 8 PM Fri &amp; Sat</span><span>⏱ 75 min</span><span>👣 Small group</span></div>
+          <div class="row">
+            <a class="btn btn-book" href="tour.html"><span class="ico">🎟</span> Book the Ghost Tour</a>
+            <span class="chip chip-glass"><span class="stars">★★★★★</span> 4.9 TripAdvisor · 1,400+ reviews</span>
+          </div>
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</main>
+
+<!-- ============ RELATED STORIES ============ -->
+<section class="related">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Keep Reading</span>
+      <h2>More from the research desk</h2>
+    </div>
+    <div class="rel-pills">
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">🕰</span> 20th Century Flagstaff</a>
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">📚</span> 12 Best Books on Arizona Ghost Stories</a>
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">🏨</span> 5 Haunted Arizona Hotels to Visit</a>
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">🕯</span> A Night With the Spirits</a>
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">🏛</span> 24 Hours in Arizona's Original Capitol</a>
+      <a class="rel-pill" href="stories.html"><span class="rp-ico">👣</span> All Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <span class="kicker on-dark">Tonight at 7 · Wheeler Park</span>
+    <h2>Some stories should be heard <em>where they happened.</em></h2>
+    <p>Join a small group tonight in downtown Flagstaff. Book direct for the best price and free cancellation up to 72 hours out.</p>
+    <div class="hero-proof">
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+      <span class="chip chip-glass">🏆 Best of Flagstaff 2023</span>
+      <span class="chip chip-glass">👣 30,000+ guests guided</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-book" href="tour.html"><span class="ico">🎟</span> Book the Ghost Tour</a>
+      <a class="btn btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="homepage.html">
+          <span class="brand-mark">👣</span>
+          <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+        </a>
+        <p>Locally owned, mother and son, est. 2015. Ghost, history, mural and Route 66 walking tours in Flagstaff, Tucson and Prescott.</p>
+        <div class="foot-cta">
+          <a class="btn btn-sm btn-book" href="tours.html">Book a Tour</a>
+          <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> (928) 224-0518</a>
+        </div>
+      </div>
+      <div>
+        <h4>Tours by City</h4>
+        <ul>
+          <li><a href="city.html">Flagstaff (6 tours)</a></li>
+          <li><a href="tucson.html">Tucson (2 tours)</a></li>
+          <li><a href="prescott.html">Prescott (2 tours)</a></li>
+          <li><a href="tours.html">All Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="ghost-cities.html">Ghost Cities</a></li>
+          <li><a href="homepage.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <ul>
+          <li>24 N San Francisco St Unit J<br>Flagstaff, AZ 86001</li>
+          <li><a href="tel:+19282240518">(928) 224-0518</a></li>
+          <li><a href="mailto:support@freakyfoottours.com">support@freakyfoottours.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Freaky Foot Tours LLC · Locally owned in Flagstaff, Arizona since 2015</span>
+      <span>History by day. Haunts by night.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE BOOK BAR ============ -->
+<div class="book-bar">
+  <div class="meta"><span class="stars">★★★★★</span> 4.9 TripAdvisor<br>Ghost tour from $29 · Tonight 7 PM</div>
+  <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518" aria-label="Call Freaky Foot Tours">📞</a>
+  <a class="btn btn-sm btn-book" href="tour.html">Book Now</a>
+</div>
+
+<script>
+  // Slight header darkening on scroll. Page works fine without JS.
+  (function(){
+    var h=document.querySelector('.site-head');
+    if(!h)return;
+    addEventListener('scroll',function(){
+      h.style.background=scrollY>40?'rgba(8,19,31,.96)':'rgba(8,19,31,.82)';
+    },{passive:true});
+  })();
+</script>
+</body>
+</html>

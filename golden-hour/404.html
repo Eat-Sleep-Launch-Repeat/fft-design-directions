@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found · Freaky Foot Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dusk:#0E1E33;
+    --dusk-deep:#08131F;
+    --dusk-soft:#1B3450;
+    --amber:#F2A33C;
+    --amber-hot:#E08615;
+    --amber-soft:#FCE3B8;
+    --cream:#FBF7EF;
+    --paper:#FFFFFF;
+    --ink:#17202F;
+    --muted:#5B667A;
+    --line:#E8E0D2;
+    --radius:20px;
+    --shadow-lg:0 24px 60px -18px rgba(8,19,31,.35);
+    --shadow-md:0 12px 30px -12px rgba(8,19,31,.28);
+    --shadow-btn:0 10px 24px -8px rgba(224,134,21,.55);
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);line-height:1.12;letter-spacing:-.01em}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .kicker{font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#A85F00}
+  .kicker.on-dark{color:var(--amber)}
+
+  /* ---------- Buttons & chips (shared system) ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font:700 15.5px/1 var(--sans);padding:17px 30px;cursor:pointer;border:2px solid transparent;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease;white-space:nowrap;min-height:52px}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible,a:focus-visible{outline:3px solid var(--amber-hot);outline-offset:2px}
+  .btn-book{background:linear-gradient(180deg,var(--amber),var(--amber-hot));color:var(--dusk-deep);box-shadow:var(--shadow-btn)}
+  .btn-book:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(224,134,21,.65)}
+  .btn-ghost-light{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-2px)}
+  .btn-sm{padding:13px 22px;font-size:14px;min-height:44px}
+  .btn .ico{font-size:1.05em;line-height:0}
+  .chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:8px 15px;font:600 13px/1.2 var(--sans)}
+  .chip-glass{background:rgba(8,19,31,.55);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+  .stars{color:var(--amber);letter-spacing:1.5px;font-size:13px}
+
+  /* ---------- Header ---------- */
+  .site-head{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(8,19,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+  .site-head .wrap{display:flex;align-items:center;gap:26px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff}
+  .brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--amber),var(--amber-hot));display:grid;place-items:center;font-size:21px;box-shadow:0 6px 16px -6px rgba(224,134,21,.7)}
+  .brand-name{font:700 17px/1.15 var(--serif)}
+  .brand-name small{display:block;font:600 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+  .nav{display:flex;gap:4px;margin-left:auto}
+  .nav a{color:rgba(255,255,255,.88);font:600 14px/1 var(--sans);padding:11px 15px;border-radius:999px;border:1px solid transparent;transition:.15s}
+  .nav a:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+  .head-actions{display:flex;gap:10px;align-items:center}
+  .head-actions .btn-call{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .head-actions .btn-call:hover{background:rgba(255,255,255,.22);border-color:#fff}
+
+  /* ---------- 404 stage ---------- */
+  .lost{min-height:100vh;display:flex;align-items:center;color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.88) 0%,rgba(8,19,31,.72) 40%,rgba(8,19,31,.9) 100%),
+    url('../assets/e42e3b0af201ae42.webp') center 30%/cover no-repeat var(--dusk-deep);
+    padding:130px 0 90px;text-align:center}
+  .lost .wrap{display:flex;flex-direction:column;align-items:center;gap:0}
+
+  /* Wanted poster */
+  .poster{position:relative;width:min(380px,88vw);background:
+    linear-gradient(180deg,#F7EBD3 0%,#F1E0BC 55%,#E9D3A6 100%);
+    color:#3A2B14;border-radius:6px;padding:34px 30px 30px;margin-bottom:38px;
+    box-shadow:0 40px 90px -24px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.08),inset 0 0 60px rgba(122,86,32,.18);
+    transform:rotate(-2deg)}
+  .poster::before,.poster::after{content:"";position:absolute;width:14px;height:14px;border-radius:999px;background:radial-gradient(circle at 35% 30%,#6B6B6B,#2C2C2C);box-shadow:0 2px 4px rgba(0,0,0,.45);top:12px}
+  .poster::before{left:14px}
+  .poster::after{right:14px}
+  .poster .rule{border:none;border-top:2px solid rgba(58,43,20,.45);margin:12px 0}
+  .poster .rule.thin{border-top-width:1px;border-top-style:dashed}
+  .poster .p-top{font:700 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:#7A5620}
+  .poster h2{font:700 54px/1 var(--serif);letter-spacing:.08em;margin:10px 0 4px;color:#2E2007}
+  .poster .p-sub{font:700 12px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#7A5620}
+  .poster .p-mark{font-size:64px;line-height:1;margin:16px 0 6px;filter:sepia(1) saturate(.6) opacity(.85)}
+  .poster .p-name{font:600 22px/1.25 var(--serif);font-style:italic;margin-bottom:6px}
+  .poster .p-desc{font:500 13px/1.55 var(--sans);color:#5C4419}
+  .poster .p-reward{display:inline-block;margin-top:14px;border:2px solid rgba(58,43,20,.55);border-radius:4px;padding:8px 18px;font:700 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#3A2B14}
+
+  .lost .kicker{margin-bottom:14px}
+  .lost h1{font-size:clamp(36px,5.4vw,64px);font-weight:600;max-width:18ch;margin:0 auto 16px}
+  .lost h1 em{font-style:italic;color:var(--amber)}
+  .lost .sub{color:rgba(255,255,255,.88);max-width:52ch;margin:0 auto 30px;font-size:clamp(16px,1.5vw,19px)}
+  .lost .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:26px}
+  .lost .proof{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dusk-deep);color:rgba(255,255,255,.78);padding:64px 0 120px;font-size:14px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:44px}
+  .foot-grid h4{font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .foot-grid ul{list-style:none;display:grid;gap:10px}
+  .foot-grid a:hover{color:#fff;text-decoration:underline}
+  .foot-brand p{margin:14px 0 20px;max-width:34ch}
+  .foot-cta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+  .foot-legal{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+  /* ---------- Mobile book bar ---------- */
+  .book-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;background:rgba(8,19,31,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.14);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .book-bar .meta{color:#fff;font:600 12px/1.35 var(--sans);flex:1;min-width:0}
+  .book-bar .meta .stars{font-size:11px}
+  .book-bar .btn{min-height:48px;padding:13px 20px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1020px){
+    .nav{display:none}
+    .head-actions .btn-call span.lbl{display:none}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .site-head .wrap{height:66px;gap:12px}
+    .brand-name{font-size:15px}
+    .lost{padding:110px 0 70px}
+    .lost .ctas .btn{width:100%}
+    .poster{padding:28px 22px 24px}
+    .poster h2{font-size:44px}
+    .foot-grid{grid-template-columns:1fr}
+    .book-bar{display:flex;align-items:center}
+    footer{padding-bottom:150px}
+    .head-actions .btn-book-head{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="homepage.html">
+      <span class="brand-mark">👣</span>
+      <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="city.html">Tours by City</a>
+      <a href="tours.html">All Tours</a>
+      <a href="stories.html">Stories</a>
+      <a href="ghost-cities.html">Ghost Cities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="btn btn-sm btn-call" href="tel:+19282240518"><span class="ico">📞</span><span class="lbl">(928) 224-0518</span></a>
+      <a class="btn btn-sm btn-book btn-book-head" href="tours.html">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 404 STAGE ============ -->
+<main class="lost">
+  <div class="wrap">
+
+    <div class="poster" role="img" aria-label="Vintage wanted poster: Wanted, dead or alive, preferably alive, one missing page. Error 404.">
+      <div class="p-top">Notice · Territory of Arizona</div>
+      <h2>WANTED</h2>
+      <div class="p-sub">Dead or Alive · Preferably Alive</div>
+      <hr class="rule">
+      <div class="p-mark">👣</div>
+      <div class="p-name">One Missing Page</div>
+      <p class="p-desc">Last seen wandering this website after dark. Answers to "404". Approach with a lantern and low expectations.</p>
+      <hr class="rule thin">
+      <span class="p-reward">Reward: One Good Ghost Story</span>
+    </div>
+
+    <span class="kicker on-dark">Error 404 · Case Unsolved</span>
+    <h1>This page <em>has vanished</em></h1>
+    <p class="sub">Like all good ghosts, it left no forwarding address. The tours, however, are very much alive.</p>
+    <div class="ctas">
+      <a class="btn btn-book" href="homepage.html"><span class="ico">🏮</span> Back to the Living</a>
+      <a class="btn btn-ghost-light" href="tours.html">All Tours</a>
+      <a class="btn btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
+    </div>
+    <div class="proof">
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+      <span class="chip chip-glass">🏆 Best of Flagstaff 2023</span>
+      <span class="chip chip-glass">👣 30,000+ guests guided</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="homepage.html">
+          <span class="brand-mark">👣</span>
+          <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+        </a>
+        <p>Locally owned, mother and son, est. 2015. Ghost, history, mural and Route 66 walking tours in Flagstaff, Tucson and Prescott.</p>
+        <div class="foot-cta">
+          <a class="btn btn-sm btn-book" href="tours.html">Book a Tour</a>
+          <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> (928) 224-0518</a>
+        </div>
+      </div>
+      <div>
+        <h4>Tours by City</h4>
+        <ul>
+          <li><a href="city.html">Flagstaff (6 tours)</a></li>
+          <li><a href="tucson.html">Tucson (2 tours)</a></li>
+          <li><a href="prescott.html">Prescott (2 tours)</a></li>
+          <li><a href="tours.html">All Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="ghost-cities.html">Ghost Cities</a></li>
+          <li><a href="homepage.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <ul>
+          <li>24 N San Francisco St Unit J<br>Flagstaff, AZ 86001</li>
+          <li><a href="tel:+19282240518">(928) 224-0518</a></li>
+          <li><a href="mailto:support@freakyfoottours.com">support@freakyfoottours.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Freaky Foot Tours LLC · Locally owned in Flagstaff, Arizona since 2015</span>
+      <span>History by day. Haunts by night.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE BOOK BAR ============ -->
+<div class="book-bar">
+  <div class="meta"><span class="stars">★★★★★</span> 5.0 · 675+ reviews<br>The tours are alive</div>
+  <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518" aria-label="Call Freaky Foot Tours">📞</a>
+  <a class="btn btn-sm btn-book" href="tours.html">Book Now</a>
+</div>
+
+<script>
+  // Slight header darkening on scroll. Page works fine without JS.
+  (function(){
+    var h=document.querySelector('.site-head');
+    if(!h)return;
+    addEventListener('scroll',function(){
+      h.style.background=scrollY>40?'rgba(8,19,31,.96)':'rgba(8,19,31,.82)';
+    },{passive:true});
+  })();
+</script>
+</body>
+</html>

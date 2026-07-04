@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; Private Tours · Talk to a Real Local Human · Freaky Foot Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dusk:#0E1E33;
+    --dusk-deep:#08131F;
+    --dusk-soft:#1B3450;
+    --amber:#F2A33C;
+    --amber-hot:#E08615;
+    --amber-soft:#FCE3B8;
+    --cream:#FBF7EF;
+    --paper:#FFFFFF;
+    --ink:#17202F;
+    --muted:#5B667A;
+    --line:#E8E0D2;
+    --teal:#1F7E77;
+    --orange:#B54F14;
+    --magenta:#A63272;
+    --radius:20px;
+    --shadow-lg:0 24px 60px -18px rgba(8,19,31,.35);
+    --shadow-md:0 12px 30px -12px rgba(8,19,31,.28);
+    --shadow-btn:0 10px 24px -8px rgba(224,134,21,.55);
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);line-height:1.12;letter-spacing:-.01em}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .kicker{font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#A85F00}
+  .kicker.on-dark{color:var(--amber)}
+
+  /* ---------- Buttons & chips (shared system) ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font:700 15.5px/1 var(--sans);padding:17px 30px;cursor:pointer;border:2px solid transparent;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease;white-space:nowrap;min-height:52px}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--amber-hot);outline-offset:2px}
+  .btn-book{background:linear-gradient(180deg,var(--amber),var(--amber-hot));color:var(--dusk-deep);box-shadow:var(--shadow-btn)}
+  .btn-book:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(224,134,21,.65)}
+  .btn-ghost-light{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-2px)}
+  .btn-ghost-dark{background:#fff;color:var(--dusk);border-color:var(--dusk)}
+  .btn-ghost-dark:hover{background:var(--dusk);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-dark{background:var(--dusk);color:#fff;box-shadow:var(--shadow-md)}
+  .btn-dark:hover{background:var(--dusk-soft);transform:translateY(-2px)}
+  .btn-sm{padding:13px 22px;font-size:14px;min-height:44px}
+  .btn-block{width:100%}
+  .btn .ico{font-size:1.05em;line-height:0}
+  .chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:8px 15px;font:600 13px/1.2 var(--sans)}
+  .chip-glass{background:rgba(8,19,31,.55);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+  .chip-cream{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:0 4px 14px -8px rgba(8,19,31,.25)}
+  .stars{color:var(--amber);letter-spacing:1.5px;font-size:13px}
+
+  /* ---------- Header ---------- */
+  .site-head{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(8,19,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+  .site-head .wrap{display:flex;align-items:center;gap:26px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff}
+  .brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--amber),var(--amber-hot));display:grid;place-items:center;font-size:21px;box-shadow:0 6px 16px -6px rgba(224,134,21,.7)}
+  .brand-name{font:700 17px/1.15 var(--serif)}
+  .brand-name small{display:block;font:600 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+  .nav{display:flex;gap:4px;margin-left:auto}
+  .nav a{color:rgba(255,255,255,.88);font:600 14px/1 var(--sans);padding:11px 15px;border-radius:999px;border:1px solid transparent;transition:.15s}
+  .nav a:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+  .head-actions{display:flex;gap:10px;align-items:center}
+  .head-actions .btn-call{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .head-actions .btn-call:hover{background:rgba(255,255,255,.22);border-color:#fff}
+
+  /* ---------- Contact hero ---------- */
+  .c-hero{min-height:62vh;display:flex;align-items:flex-end;color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.55) 0%,rgba(8,19,31,.25) 35%,rgba(8,19,31,.75) 72%,rgba(14,30,51,.97) 100%),
+    url('../assets/72c1e8e304100b20.jpg') center 26%/cover no-repeat var(--dusk-deep)}
+  .c-hero .wrap{padding-top:140px;padding-bottom:54px;width:100%}
+  .crumbs{font:600 13px/1 var(--sans);color:rgba(255,255,255,.7);margin-bottom:18px}
+  .crumbs a:hover{color:#fff;text-decoration:underline}
+  .c-hero h1{font-size:clamp(36px,5.4vw,66px);font-weight:600;max-width:16ch;margin:14px 0 14px}
+  .c-hero h1 em{font-style:italic;color:var(--amber)}
+  .c-hero .sub{font-size:clamp(16px,1.5vw,19px);color:rgba(255,255,255,.88);max-width:60ch;margin-bottom:24px}
+  .c-hero .hero-proof{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .c-hero .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* ---------- Awards bar ---------- */
+  .awards{background:var(--dusk-deep);border-top:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.85)}
+  .awards .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 38px;padding:20px 24px;font:600 13px/1.4 var(--sans)}
+  .awards .aw{display:flex;align-items:center;gap:9px}
+  .awards .aw b{color:#fff}
+  .awards .aw .dot{color:var(--amber);font-size:15px}
+
+  /* ---------- Contact layout ---------- */
+  .c-main{padding:72px 0 88px}
+  .c-cols{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:52px;align-items:start}
+  .c-left .kicker{display:block;margin-bottom:10px}
+  .c-left h2{font-size:clamp(26px,3.2vw,38px);font-weight:600;margin:0 0 14px}
+  .c-left>p{color:var(--muted);font-size:16.5px;margin-bottom:26px;max-width:56ch}
+
+  .reach{display:grid;gap:14px;margin-bottom:36px}
+  .reach-pill{display:flex;align-items:center;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px 24px;box-shadow:0 8px 24px -16px rgba(8,19,31,.25);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .reach-pill:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--amber)}
+  .reach-pill .r-ico{flex:0 0 52px;height:52px;border-radius:999px;background:linear-gradient(160deg,var(--dusk),var(--dusk-soft));color:var(--amber);display:grid;place-items:center;font-size:22px}
+  .reach-pill .r-txt{flex:1;min-width:0}
+  .reach-pill .r-txt small{display:block;font:700 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#A85F00;margin-bottom:5px}
+  .reach-pill .r-txt b{display:block;font:600 19px/1.25 var(--serif);color:var(--ink);overflow-wrap:anywhere}
+  .reach-pill .r-txt span{font:500 13px/1.45 var(--sans);color:var(--muted)}
+  .reach-pill .r-go{flex:0 0 auto;color:var(--amber-hot);font-size:18px}
+
+  .office{background:linear-gradient(160deg,var(--dusk),var(--dusk-soft));color:#fff;border-radius:20px;padding:26px 28px;box-shadow:var(--shadow-md);margin-bottom:40px;display:flex;gap:18px;align-items:flex-start}
+  .office .o-ico{flex:0 0 48px;height:48px;border-radius:14px;background:rgba(242,163,60,.16);border:1px solid rgba(242,163,60,.55);color:var(--amber);display:grid;place-items:center;font-size:21px}
+  .office b{display:block;font:600 18px/1.3 var(--serif);margin-bottom:6px}
+  .office p{font:500 14px/1.6 var(--sans);color:rgba(255,255,255,.85)}
+  .office p a{color:var(--amber)}
+  .office p a:hover{text-decoration:underline}
+
+  .private{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:20px;padding:28px 30px;box-shadow:0 8px 24px -18px rgba(8,19,31,.35)}
+  .private h3{font-size:clamp(22px,2.4vw,28px);font-weight:600;margin:10px 0 12px}
+  .private p{color:var(--muted);font-size:15.5px;margin-bottom:16px}
+  .private p b{color:var(--ink)}
+  .private .proof-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+  .private .row{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* ---------- Form card ---------- */
+  .form-rail{position:sticky;top:96px}
+  .form-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden}
+  .form-card .fc-head{background:linear-gradient(160deg,var(--dusk),var(--dusk-soft));color:#fff;padding:24px 28px}
+  .fc-head .from{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+  .fc-head h2{font:600 26px/1.2 var(--serif)}
+  .fc-head .fc-stars{margin-top:10px;font:600 13px/1.4 var(--sans);color:rgba(255,255,255,.85)}
+  .form-card .fc-body{padding:26px 28px 28px}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .f-field{display:grid;gap:6px}
+  .f-field.full{grid-column:1 / -1}
+  .f-field label{font:700 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .f-field input,.f-field select,.f-field textarea{width:100%;font:500 15px/1.4 var(--sans);color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:13px 16px;transition:border-color .15s ease,box-shadow .15s ease}
+  .f-field textarea{min-height:110px;resize:vertical}
+  .f-field select{appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235B667A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+  .f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:none;border-color:var(--amber-hot);box-shadow:0 0 0 3px rgba(242,163,60,.25)}
+  .fc-body .btn-book{margin-top:20px}
+  .fc-trust{margin-top:16px;display:grid;gap:8px;font:500 12.5px/1.5 var(--sans);color:var(--muted)}
+  .fc-trust span{display:flex;gap:8px;align-items:flex-start}
+  .fc-trust .t{color:var(--amber-hot)}
+
+  /* ---------- Final CTA ---------- */
+  .final{color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.8),rgba(8,19,31,.55) 45%,rgba(8,19,31,.88)),
+    url('../assets/e42e3b0af201ae42.webp') center/cover no-repeat var(--dusk-deep);
+    padding:110px 0;text-align:center}
+  .final h2{font-size:clamp(32px,4.6vw,54px);font-weight:600;max-width:22ch;margin:14px auto 16px}
+  .final h2 em{font-style:italic;color:var(--amber)}
+  .final p{color:rgba(255,255,255,.86);max-width:52ch;margin:0 auto 28px;font-size:17px}
+  .final .proof{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:30px}
+  .final .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dusk-deep);color:rgba(255,255,255,.78);padding:64px 0 120px;font-size:14px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:44px}
+  .foot-grid h4{font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .foot-grid ul{list-style:none;display:grid;gap:10px}
+  .foot-grid a:hover{color:#fff;text-decoration:underline}
+  .foot-brand p{margin:14px 0 20px;max-width:34ch}
+  .foot-cta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+  .foot-legal{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+  /* ---------- Mobile book bar ---------- */
+  .book-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;background:rgba(8,19,31,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.14);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .book-bar .meta{color:#fff;font:600 12px/1.35 var(--sans);flex:1;min-width:0}
+  .book-bar .meta .stars{font-size:11px}
+  .book-bar .btn{min-height:48px;padding:13px 20px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1020px){
+    .nav{display:none}
+    .head-actions .btn-call span.lbl{display:none}
+    .c-cols{grid-template-columns:1fr}
+    .form-rail{position:static}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .site-head .wrap{height:66px;gap:12px}
+    .brand-name{font-size:15px}
+    .c-hero{min-height:56vh}
+    .c-hero .wrap{padding-top:110px;padding-bottom:44px}
+    .c-hero .hero-ctas .btn{width:100%}
+    .reach-pill{padding:16px 18px;gap:14px}
+    .reach-pill .r-ico{flex-basis:46px;height:46px;font-size:20px}
+    .office{flex-direction:column}
+    .f-grid{grid-template-columns:1fr}
+    .form-card .fc-body{padding:22px 20px 24px}
+    .foot-grid{grid-template-columns:1fr}
+    .book-bar{display:flex;align-items:center}
+    footer{padding-bottom:150px}
+    .head-actions .btn-book-head{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="homepage.html">
+      <span class="brand-mark">👣</span>
+      <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="city.html">Tours by City</a>
+      <a href="tours.html">All Tours</a>
+      <a href="stories.html">Stories</a>
+      <a href="ghost-cities.html">Ghost Cities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="btn btn-sm btn-call" href="tel:+19282240518"><span class="ico">📞</span><span class="lbl">(928) 224-0518</span></a>
+      <a class="btn btn-sm btn-book btn-book-head" href="tours.html">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONTACT HERO ============ -->
+<section class="c-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="homepage.html">Home</a> / Contact &amp; Private Tours</p>
+    <span class="kicker on-dark">Contact · Private Tours · Group Rates</span>
+    <h1>Talk to a real <em>local human</em></h1>
+    <p class="sub">Private tours, group rates, school groups, bachelorette parties, press requests, or a ghost story that needs telling. The person who answers lives here, guides here, and can book your whole crew in one call.</p>
+    <div class="hero-proof">
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 4.9 TripAdvisor</span>
+      <span class="chip chip-glass">👣 30,000+ guests guided</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-book" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
+      <a class="btn btn-ghost-light" href="#inquire">Send an Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS BAR ============ -->
+<div class="awards" role="complementary" aria-label="Awards and press">
+  <div class="wrap">
+    <span class="aw"><span class="dot">✦</span><b>Best of Flagstaff</b>&nbsp;Guided Tour Company, 2023</span>
+    <span class="aw"><span class="dot">✦</span><b>US News</b>&nbsp;#17 Things to Do in Flagstaff (Dec 2025)</span>
+    <span class="aw"><span class="dot">✦</span>Featured on&nbsp;<b>Travel Channel's The Dead Files</b>&nbsp;(2022)</span>
+    <span class="aw"><span class="dot">✦</span><b>1,400+</b>&nbsp;verified reviews cross-platform</span>
+    <span class="aw"><span class="dot">✦</span><b>Flagstaff's most reviewed</b>&nbsp;tour company</span>
+  </div>
+</div>
+
+<!-- ============ MAIN: METHODS + FORM ============ -->
+<main class="c-main">
+  <div class="wrap c-cols">
+
+    <!-- Left: contact methods -->
+    <div class="c-left">
+      <span class="kicker">Fastest Ways to Reach Us</span>
+      <h2>Pick up the phone, we actually answer it</h2>
+      <p>Call or text and you get a Flagstaff local, not a call center. Booking tonight? Phone is fastest. Planning a private event? The form on this page gets you a same-day reply.</p>
+
+      <div class="reach">
+        <a class="reach-pill" href="tel:+19282240518">
+          <span class="r-ico">📞</span>
+          <span class="r-txt">
+            <small>Flagstaff &amp; Prescott · Call or Text</small>
+            <b>(928) 224-0518</b>
+            <span>Tour bookings, private events, tonight's availability</span>
+          </span>
+          <span class="r-go">→</span>
+        </a>
+        <a class="reach-pill" href="tel:+15202205616">
+          <span class="r-ico">🌵</span>
+          <span class="r-txt">
+            <small>Tucson Local Line · Call or Text</small>
+            <b>(520) 220-5616</b>
+            <span>Tucson Ghost Tour and Tucson Mural Tour questions</span>
+          </span>
+          <span class="r-go">→</span>
+        </a>
+        <a class="reach-pill" href="mailto:support@freakyfoottours.com">
+          <span class="r-ico">✉️</span>
+          <span class="r-txt">
+            <small>Email · Press &amp; Everything Else</small>
+            <b>support@freakyfoottours.com</b>
+            <span>Group quotes, media requests, gift questions, lost and found</span>
+          </span>
+          <span class="r-go">→</span>
+        </a>
+      </div>
+
+      <div class="office">
+        <span class="o-ico">📍</span>
+        <div>
+          <b>The office, if you would rather knock</b>
+          <p>24 N San Francisco St Unit J, Flagstaff, AZ 86001. Half a block off Route 66 in downtown Flagstaff, steps from the Monte Vista and the Orpheum. If the lantern is lit, someone is in.</p>
+        </div>
+      </div>
+
+      <div class="private" id="private">
+        <span class="kicker">Private Tours &amp; Groups</span>
+        <h3>Rent a storyteller for the evening</h3>
+        <p><b>Any tour we run, we can run just for you.</b> Bachelorette parties who want the Whiskey Row ghosts to themselves. School groups walking the Route 66 centennial with a guide who names the year and the neon. Company outings, family reunions, paranormal clubs, film crews. Tell us the date, the town and the headcount, and we will build the night around you.</p>
+        <p>Every private tour is led by the same local guides our reviews rave about, in Flagstaff, Tucson or Prescott. Mother and son owned since 2015, five generations of Arizona roots, and yes, Susan wrote the book on haunted Flagstaff.</p>
+        <div class="proof-row">
+          <span class="chip chip-cream"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+          <span class="chip chip-cream">🏆 Best of Flagstaff 2023</span>
+          <span class="chip chip-cream">👣 30,000+ guests guided</span>
+        </div>
+        <div class="row">
+          <a class="btn btn-book" href="#inquire">Plan a Private Tour</a>
+          <a class="btn btn-ghost-dark" href="sms:+19282240518"><span class="ico">💬</span> Text Us Your Idea</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: inquiry form -->
+    <aside class="form-rail" id="inquire">
+      <div class="form-card">
+        <div class="fc-head">
+          <div class="from">Private Tours &amp; Group Inquiries</div>
+          <h2>Tell us about your crew</h2>
+          <div class="fc-stars"><span class="stars">★★★★★</span> 1,400+ verified reviews · Est. 2015</div>
+        </div>
+        <div class="fc-body">
+          <form>
+            <div class="f-grid">
+              <div class="f-field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+              </div>
+              <div class="f-field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="f-field">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555">
+              </div>
+              <div class="f-field">
+                <label for="f-city">Which City</label>
+                <select id="f-city" name="city">
+                  <option>Flagstaff</option>
+                  <option>Tucson</option>
+                  <option>Prescott</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="f-field">
+                <label for="f-size">Group Size</label>
+                <input id="f-size" name="group_size" type="text" inputmode="numeric" placeholder="e.g. 12">
+              </div>
+              <div class="f-field">
+                <label for="f-dates">Preferred Dates</label>
+                <input id="f-dates" name="dates" type="text" placeholder="e.g. Oct 10 or 11">
+              </div>
+              <div class="f-field full">
+                <label for="f-occasion">Occasion</label>
+                <select id="f-occasion" name="occasion">
+                  <option>Private tour, just us</option>
+                  <option>Bachelorette or bachelor party</option>
+                  <option>School or student group</option>
+                  <option>Company or team outing</option>
+                  <option>Family reunion</option>
+                  <option>Press or media</option>
+                  <option>A ghost story that needs telling</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="f-field full">
+                <label for="f-msg">Message</label>
+                <textarea id="f-msg" name="message" placeholder="Tell us the plan. Which tour caught your eye, any timing quirks, and anything the guide should know."></textarea>
+              </div>
+            </div>
+            <button class="btn btn-book btn-block" type="submit"><span class="ico">✉️</span> Send the Inquiry</button>
+          </form>
+          <div class="fc-trust">
+            <span><span class="t">✓</span> A real local replies, usually the same day</span>
+            <span><span class="t">✓</span> No deposit to ask, quotes are free</span>
+            <span><span class="t">✓</span> Booking for tonight? Call or text (928) 224-0518 instead</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <span class="kicker on-dark">Or Skip the Small Talk</span>
+    <h2>The lanterns are lit. <em>Bring the whole crew.</em></h2>
+    <p>Public tours run nightly and private dates go fast in October. Book direct for the best price and free cancellation up to 72 hours out.</p>
+    <div class="proof">
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+      <span class="chip chip-glass">🏆 Best of Flagstaff 2023</span>
+      <span class="chip chip-glass">✦ Locally owned · Est. 2015</span>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-book" href="tours.html"><span class="ico">🎟</span> Book a Public Tour</a>
+      <a class="btn btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="homepage.html">
+          <span class="brand-mark">👣</span>
+          <span class="brand-name">Freaky Foot Tours<small>Arizona's Trusted Storytellers</small></span>
+        </a>
+        <p>Locally owned, mother and son, est. 2015. Ghost, history, mural and Route 66 walking tours in Flagstaff, Tucson and Prescott.</p>
+        <div class="foot-cta">
+          <a class="btn btn-sm btn-book" href="tours.html">Book a Tour</a>
+          <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> (928) 224-0518</a>
+        </div>
+      </div>
+      <div>
+        <h4>Tours by City</h4>
+        <ul>
+          <li><a href="city.html">Flagstaff (6 tours)</a></li>
+          <li><a href="tucson.html">Tucson (2 tours)</a></li>
+          <li><a href="prescott.html">Prescott (2 tours)</a></li>
+          <li><a href="tours.html">All Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="ghost-cities.html">Ghost Cities</a></li>
+          <li><a href="homepage.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <ul>
+          <li>24 N San Francisco St Unit J<br>Flagstaff, AZ 86001</li>
+          <li><a href="tel:+19282240518">(928) 224-0518</a></li>
+          <li><a href="mailto:support@freakyfoottours.com">support@freakyfoottours.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Freaky Foot Tours LLC · Locally owned in Flagstaff, Arizona since 2015</span>
+      <span>History by day. Haunts by night.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE BOOK BAR ============ -->
+<div class="book-bar">
+  <div class="meta"><span class="stars">★★★★★</span> 5.0 · 675+ reviews<br>We answer, (928) 224-0518</div>
+  <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518" aria-label="Call Freaky Foot Tours">📞</a>
+  <a class="btn btn-sm btn-book" href="tours.html">Book Now</a>
+</div>
+
+<script>
+  // Slight header darkening on scroll. Page works fine without JS.
+  (function(){
+    var h=document.querySelector('.site-head');
+    if(!h)return;
+    addEventListener('scroll',function(){
+      h.style.background=scrollY>40?'rgba(8,19,31,.96)':'rgba(8,19,31,.82)';
+    },{passive:true});
+  })();
+</script>
+</body>
+</html>

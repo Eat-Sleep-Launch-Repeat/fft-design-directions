@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Freaky Foot Tours · Ghost, History &amp; Mural Walking Tours in Flagstaff, Tucson &amp; Prescott</title>
+<title>Prescott Walking Tours · Ghost Tour &amp; History Tour on Whiskey Row · Freaky Foot Tours</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
   .kicker.on-dark{color:var(--amber)}
   section{position:relative}
 
-  /* ---------- Buttons ---------- */
+  /* ---------- Buttons & chips (shared system) ---------- */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font:700 15.5px/1 var(--sans);padding:17px 30px;cursor:pointer;border:2px solid transparent;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease;white-space:nowrap;min-height:52px}
   .btn:active{transform:translateY(1px)}
   .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--amber-hot);outline-offset:2px}
@@ -57,8 +57,6 @@
   .btn-sm{padding:13px 22px;font-size:14px;min-height:44px}
   .btn-block{width:100%}
   .btn .ico{font-size:1.05em;line-height:0}
-
-  /* ---------- Chips ---------- */
   .chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:8px 15px;font:600 13px/1.2 var(--sans)}
   .chip-glass{background:rgba(8,19,31,.55);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
   .chip-cream{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:0 4px 14px -8px rgba(8,19,31,.25)}
@@ -79,15 +77,17 @@
   .head-actions .btn-call:hover{background:rgba(255,255,255,.22);border-color:#fff}
   .menu-toggle{display:none}
 
-  /* ---------- Hero ---------- */
-  .hero{min-height:96vh;display:flex;align-items:flex-end;color:#fff;background:
-    linear-gradient(180deg,rgba(8,19,31,.42) 0%,rgba(8,19,31,.12) 34%,rgba(8,19,31,.62) 68%,rgba(8,19,31,.94) 100%),
-    url('../assets/b494803850bc3202.webp') center 38%/cover no-repeat var(--dusk-deep)}
-  .hero .wrap{padding-top:150px;padding-bottom:70px;width:100%}
+  /* ---------- City hero (golden hour treatment) ---------- */
+  .hero{min-height:92vh;display:flex;align-items:flex-end;color:#fff;background:
+    linear-gradient(180deg,rgba(8,19,31,.52) 0%,rgba(14,30,51,.24) 28%,rgba(181,79,20,.24) 52%,rgba(8,19,31,.7) 74%,rgba(8,19,31,.95) 100%),
+    url('../assets/31f17baa015b07b9.webp') center 38%/cover no-repeat var(--dusk-deep)}
+  .hero .wrap{padding-top:150px;padding-bottom:66px;width:100%}
+  .crumbs{font:600 13px/1 var(--sans);color:rgba(255,255,255,.7);margin-bottom:18px}
+  .crumbs a:hover{color:#fff;text-decoration:underline}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(242,163,60,.16);border:1px solid rgba(242,163,60,.55);color:var(--amber-soft);border-radius:999px;padding:9px 17px;font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
-  .hero h1{font-size:clamp(40px,6.2vw,76px);font-weight:600;max-width:15ch;margin-bottom:18px}
+  .hero h1{font-size:clamp(40px,6vw,72px);font-weight:600;max-width:16ch;margin-bottom:18px}
   .hero h1 em{font-style:italic;color:var(--amber)}
-  .hero-sub{font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,.88);max-width:56ch;margin-bottom:28px}
+  .hero-sub{font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,.88);max-width:58ch;margin-bottom:28px}
   .hero-proof{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
   .hero-note{font:500 13px/1.5 var(--sans);color:rgba(255,255,255,.72);margin-top:16px}
@@ -105,22 +105,10 @@
   .sec-head p{color:var(--muted);font-size:17px}
   .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
 
-  /* ---------- City picker ---------- */
-  .cities{padding:88px 0 30px}
-  .city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .city-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:390px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow-md);isolation:isolate}
-  .city-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;z-index:-2}
-  .city-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,31,0) 30%,rgba(8,19,31,.9) 100%);z-index:-1}
-  .city-card:hover .bg{transform:scale(1.05)}
-  .city-body{padding:26px;width:100%}
-  .city-body .chip-glass{margin-bottom:12px}
-  .city-body h3{font-size:30px;font-weight:600;margin-bottom:6px}
-  .city-body p{font-size:14.5px;color:rgba(255,255,255,.85);margin-bottom:16px}
-  .city-body .row{display:flex;gap:10px;flex-wrap:wrap}
-
   /* ---------- Tour cards ---------- */
-  .tours{padding:80px 0}
+  .tours{padding:88px 0}
   .tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tour-grid.two{grid-template-columns:repeat(2,1fr);max-width:920px;margin:0 auto}
   .tour-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 24px -14px rgba(8,19,31,.2);transition:transform .2s ease,box-shadow .2s ease}
   .tour-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
   .tc-media{position:relative;aspect-ratio:4/3;overflow:hidden}
@@ -144,9 +132,23 @@
   .accent-magenta{color:var(--magenta)} .bg-magenta{background:var(--magenta)}
   .accent-gold{color:var(--gold)} .bg-gold{background:var(--gold)}
   .accent-dusk{color:var(--dusk-soft)} .bg-dusk{background:var(--dusk-soft)}
-  .tours-foot{display:flex;justify-content:center;margin-top:40px}
+  .tours-foot{display:flex;justify-content:center;gap:14px;margin-top:40px;flex-wrap:wrap}
 
-  /* ---------- Why us ---------- */
+  /* ---------- Landmarks band ---------- */
+  .landmarks{padding:88px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .lm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .lm-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow-md);isolation:isolate}
+  .lm-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;z-index:-2}
+  .lm-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,31,.05) 30%,rgba(8,19,31,.92) 100%);z-index:-1}
+  .lm-card:hover .bg{transform:scale(1.05)}
+  .lm-body{padding:26px;width:100%}
+  .lm-body .yr{display:inline-flex;align-items:center;gap:7px;font:700 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+  .lm-body h3{font-size:25px;font-weight:600;margin-bottom:8px}
+  .lm-body p{font-size:14.5px;color:rgba(255,255,255,.87);margin-bottom:14px}
+  .lm-body .lnk{font:700 13.5px/1 var(--sans);color:var(--amber-soft);display:inline-flex;align-items:center;gap:7px}
+  .lm-card:hover .lnk{color:#fff}
+
+  /* ---------- Why us / anti-chain ---------- */
   .why{background:var(--dusk);color:#fff;padding:96px 0}
   .why .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
   .why-media{position:relative}
@@ -160,23 +162,12 @@
   .why-list .tick{flex:0 0 30px;height:30px;border-radius:999px;background:rgba(242,163,60,.18);border:1px solid rgba(242,163,60,.6);color:var(--amber);display:grid;place-items:center;font-size:14px;margin-top:1px}
   .why-list b{color:#fff}
   .why-ctas{display:flex;gap:14px;flex-wrap:wrap}
-
-  /* ---------- Testimonials ---------- */
-  .testi{padding:96px 0}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .t-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 8px 24px -16px rgba(8,19,31,.22);display:flex;flex-direction:column;gap:14px}
-  .t-card .stars{font-size:15px}
-  .t-card blockquote{font:500 16.5px/1.55 var(--serif);color:var(--ink)}
-  .t-card .who{font:600 13px/1.4 var(--sans);color:var(--muted);margin-top:auto}
-  .t-card .who b{color:var(--ink)}
-  .press-strip{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 30px;display:flex;gap:22px;align-items:center;box-shadow:0 8px 24px -16px rgba(8,19,31,.22)}
-  .press-strip .badge{flex:0 0 auto;background:var(--dusk);color:var(--amber);border-radius:14px;padding:12px 16px;font:700 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;text-align:center}
-  .press-strip q{font:500 15.5px/1.55 var(--serif);color:var(--muted)}
-  .press-strip .src{font:600 12.5px/1.4 var(--sans);color:var(--muted);white-space:nowrap}
-  .testi-foot{display:flex;justify-content:center;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .press-quote{margin-top:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:5px solid var(--amber);border-radius:16px;padding:20px 24px}
+  .press-quote q{display:block;font:500 15.5px/1.55 var(--serif);color:rgba(255,255,255,.9);margin-bottom:10px}
+  .press-quote .src{font:600 12.5px/1.4 var(--sans);color:rgba(255,255,255,.6)}
 
   /* ---------- FAQ ---------- */
-  .faq{padding:0 0 96px}
+  .faq{padding:96px 0}
   .faq-list{max-width:820px;margin:0 auto;display:grid;gap:12px}
   .faq details{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden}
   .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font:700 16px/1.4 var(--sans)}
@@ -219,20 +210,17 @@
     .head-actions .btn-call span.lbl{display:none}
     .why .wrap{grid-template-columns:1fr;gap:40px}
     .tour-grid{grid-template-columns:repeat(2,1fr)}
-    .testi-grid{grid-template-columns:1fr;max-width:640px;margin:0 auto}
+    .lm-grid{grid-template-columns:1fr;max-width:640px;margin:0 auto}
+    .lm-card{min-height:340px}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:760px){
     .site-head .wrap{height:66px;gap:12px}
     .brand-name{font-size:15px}
-    .hero{min-height:88vh}
+    .hero{min-height:86vh}
     .hero .wrap{padding-top:120px;padding-bottom:56px}
     .hero-ctas .btn{width:100%}
-    .city-grid{grid-template-columns:1fr}
-    .city-card{min-height:320px}
-    .tour-grid{grid-template-columns:1fr}
-    .press-strip{flex-direction:column;align-items:flex-start;gap:14px}
-    .press-strip .src{white-space:normal}
+    .tour-grid,.tour-grid.two{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr}
     .book-bar{display:flex;align-items:center}
     footer{padding-bottom:150px}
@@ -263,24 +251,25 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- ============ CITY HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <span class="hero-badge">✦ Locally Owned · Est. 2015 · Flagstaff, Tucson &amp; Prescott</span>
-    <h1>History by day.<br><em>Haunts by night.</em></h1>
-    <p class="hero-sub">Ghost, history, mural and Route 66 walking tours led by guides who live in the towns they haunt. Not a franchise. Not a script factory. The local tour, the one 30,000+ guests found before you.</p>
+    <p class="crumbs"><a href="homepage.html">Home</a> / Prescott</p>
+    <span class="hero-badge">✦ Arizona's First Territorial Capital · Est. 1864</span>
+    <h1>Prescott walking tours, <em>straight off Whiskey Row</em></h1>
+    <p class="hero-sub">Arizona's first territorial capital still keeps its saloons, its courthouse elms and its grudges. Walk it with the locals: ghosts on Whiskey Row nightly at 7, and two full hours of frontier history every morning at 10. Both start at the Rough Rider statue on Courthouse Plaza.</p>
     <div class="hero-proof">
-      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 125+ Prescott reviews</span>
       <span class="chip chip-glass"><span class="stars">★★★★★</span> 4.9 TripAdvisor</span>
-      <span class="chip chip-glass">🏆 Best of Flagstaff 2023</span>
       <span class="chip chip-glass">👣 30,000+ guests guided</span>
+      <span class="chip chip-glass">✦ Locally owned · Est. 2015</span>
     </div>
     <div class="hero-ctas">
-      <a class="btn btn-book" href="#tours"><span class="ico">🎟</span> Book Your Tour</a>
-      <a class="btn btn-ghost-light" href="#cities">Explore the Tours</a>
+      <a class="btn btn-book" href="#tours"><span class="ico">🎟</span> Book a Prescott Tour</a>
+      <a class="btn btn-ghost-light" href="#landmarks">Meet Whiskey Row</a>
       <a class="btn btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
     </div>
-    <p class="hero-note">Free cancellation up to 72 hours before your tour · Runs rain, snow or starlight</p>
+    <p class="hero-note">Free cancellation up to 72 hours before your tour · Both tours meet at Courthouse Plaza, 120 S Cortez St</p>
   </div>
 </section>
 
@@ -291,189 +280,54 @@
     <span class="aw"><span class="dot">✦</span><b>US News</b>&nbsp;#17 Things to Do in Flagstaff (Dec 2025)</span>
     <span class="aw"><span class="dot">✦</span>Featured on&nbsp;<b>Travel Channel's The Dead Files</b>&nbsp;(2022)</span>
     <span class="aw"><span class="dot">✦</span><b>1,400+</b>&nbsp;verified reviews cross-platform</span>
-    <span class="aw"><span class="dot">✦</span><b>Flagstaff's most reviewed</b>&nbsp;tour company</span>
+    <span class="aw"><span class="dot">✦</span><b>Five generations</b>&nbsp;of Arizona roots</span>
   </div>
 </div>
 
-<!-- ============ CITY PICKER ============ -->
-<section class="cities" id="cities">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Three Towns, One Family of Storytellers</span>
-      <h2>Pick your ghost city</h2>
-      <p>Every tour is researched, written and led here in Arizona. Our guides live in the towns they haunt, and it shows in every story.</p>
-    </div>
-    <div class="city-grid">
-      <a class="city-card" href="city.html">
-        <span class="bg" style="background-image:url('../assets/1d82225e31c1129c.webp')"></span>
-        <div class="city-body">
-          <span class="chip chip-glass">6 tours · Home base since 2015</span>
-          <h3>Flagstaff</h3>
-          <p>Ghosts, murals, madness and the Mother Road, all starting steps from Heritage Square.</p>
-          <div class="row"><span class="btn btn-sm btn-book">See Flagstaff Tours</span></div>
-        </div>
-      </a>
-      <a class="city-card" href="tucson.html">
-        <span class="bg" style="background-image:url('../assets/0f93c70ee69492f4.jpg')"></span>
-        <div class="city-body">
-          <span class="chip chip-glass">2 tours · Old Pueblo after dark</span>
-          <h3>Tucson</h3>
-          <p>Neon marquees, adobe walls and the spirits that never left downtown Tucson.</p>
-          <div class="row"><span class="btn btn-sm btn-book">See Tucson Tours</span></div>
-        </div>
-      </a>
-      <a class="city-card" href="prescott.html">
-        <span class="bg" style="background-image:url('../assets/31f17baa015b07b9.webp')"></span>
-        <div class="city-body">
-          <span class="chip chip-glass">2 tours · Whiskey Row &amp; beyond</span>
-          <h3>Prescott</h3>
-          <p>Territorial capital by day, haunted Hassayampa halls by night.</p>
-          <div class="row"><span class="btn btn-sm btn-book">See Prescott Tours</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TOUR CARDS ============ -->
+<!-- ============ PRESCOTT TOUR CARDS ============ -->
 <section class="tours" id="tours">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker">Book Direct, Skip the Middleman</span>
-      <h2>The tours</h2>
-      <p>Small groups, big stories. Every departure capped so you can hear every word.</p>
+      <span class="kicker">Two Ways to Walk Prescott</span>
+      <h2>Pick your Prescott tour</h2>
+      <p>History by daylight, ghosts after dark. Both routes step off from the Rough Rider statue on Courthouse Plaza and put you back on Whiskey Row when they end.</p>
     </div>
-    <div class="tour-grid">
+    <div class="tour-grid two">
 
       <article class="tour-card">
         <div class="tc-media">
-          <img src="../assets/faf2765a1667b285.jpg" alt="Hotel Monte Vista at night, Flagstaff">
+          <img src="../assets/72c1e8e304100b20.jpg" alt="Costumed guide with a lantern leading a night tour">
           <span class="tc-flag bg-teal">Most Popular</span>
           <span class="tc-price">$29 <small>/ adult</small></span>
+          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 125+</span>
+        </div>
+        <div class="tc-body">
+          <span class="tc-city accent-teal">Ghost · Nightly</span>
+          <h3>Prescott Ghost Tour</h3>
+          <p class="desc">Fourteen stops through the town the frontier never quite left. The Palace Saloon and its 1900 fire, the halls of Hotel St. Michael and the Whiskey Row regulars who never settled their tabs.</p>
+          <div class="tc-meta"><span>🌙 Nightly 7 PM</span><span>⏱ 90 min</span><span>📍 Courthouse Plaza, Rough Rider statue</span></div>
+          <div class="tc-actions">
+            <a class="btn btn-sm btn-book btn-block" href="tours.html#prescott">Book Now</a>
+            <a class="btn btn-sm btn-ghost-dark btn-block" href="tours.html#prescott">Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tour-card">
+        <div class="tc-media">
+          <img src="../assets/429e8387a7b862a8.webp" alt="Downtown Prescott history tour near Courthouse Plaza">
+          <span class="tc-flag bg-orange">Daytime</span>
+          <span class="tc-price">$35 <small>/ adult</small></span>
           <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 4.9 TripAdvisor</span>
         </div>
         <div class="tc-body">
-          <span class="tc-city accent-teal">Flagstaff · Ghost</span>
-          <h3>The Original Flagstaff Ghost Tour</h3>
-          <p class="desc">Phantom bellboys at the Monte Vista, a 1930s cold case and the hotels that never checked their guests out.</p>
-          <div class="tc-meta"><span>🌙 Nightly 7 PM</span><span>⏱ 75 min</span><span>👣 1 easy mile</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tour.html#book">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="tour.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/ba696b7531ba339e.webp" alt="Historic Route 66 signs in Flagstaff">
-          <span class="tc-flag bg-orange">Centennial Year</span>
-          <span class="tc-price">$35 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-orange">Flagstaff · History</span>
-          <h3>Route 66 Centennial Walking Tour</h3>
-          <p class="desc">One hundred years of the Mother Road, told where the neon still hums and the trains still roll.</p>
-          <div class="tc-meta"><span>☀️ Daily 6 PM</span><span>⏱ Easy walking</span><span>📸 Photo stops</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tours.html#flagstaff">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="city.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/b4a79242dd2f4d81.webp" alt="Colorful Flagstaff mural street art">
-          <span class="tc-flag bg-magenta">Daytime</span>
-          <span class="tc-price">$29 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-magenta">Flagstaff · Art</span>
-          <h3>Flagstaff Mural Tour</h3>
-          <p class="desc">The alleys of downtown Flagstaff are a gallery. Meet the murals, the artists and the stories behind the paint.</p>
-          <div class="tc-meta"><span>🎨 Thu–Sat 10 AM</span><span>⏱ Easy walking</span><span>☕ Downtown loop</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tours.html#flagstaff">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="city.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/aa60d85d9021d0b7.webp" alt="Southside Flagstaff haunted history tour at night">
-          <span class="tc-flag bg-dusk">21+ Only</span>
-          <span class="tc-price">$39 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-dusk">Flagstaff · After Dark</span>
-          <h3>Mountain Town of Madness</h3>
-          <p class="desc">The stories too dark for the 7 o'clock crowd. True crime, madness and mayhem, adults only.</p>
-          <div class="tc-meta"><span>🥃 Fri–Sat 9 PM</span><span>🔞 21+ only</span><span>🌙 Late night</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tours.html#flagstaff">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="city.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/0f93c70ee69492f4.jpg" alt="Tucson ghost tour at night">
-          <span class="tc-flag bg-teal">Tucson Nights</span>
-          <span class="tc-price">$29 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 225+</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-teal">Tucson · Ghost</span>
-          <h3>Tucson Ghost Tour</h3>
-          <p class="desc">Downtown Tucson after the sun drops: the Fox Theatre's glow, adobe shadows and the Old Pueblo's unquiet dead.</p>
-          <div class="tc-meta"><span>🌙 Evenings 8 PM</span><span>⏱ Easy walking</span><span>👣 Small group</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tours.html#tucson">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="tucson.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/534deaab85c684a9.jpg" alt="The haunted Hassayampa Inn, Prescott">
-          <span class="tc-flag bg-teal">Whiskey Row</span>
-          <span class="tc-price">$29 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 125+</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-teal">Prescott · Ghost</span>
-          <h3>Prescott Ghost Tour</h3>
-          <p class="desc">Faith still waits on the fourth floor of the Hassayampa Inn. Come meet her, and the rest of Whiskey Row's regulars.</p>
-          <div class="tc-meta"><span>🌙 Nightly 7 PM</span><span>⏱ Easy walking</span><span>👣 Small group</span></div>
-          <div class="tc-actions">
-            <a class="btn btn-sm btn-book btn-block" href="tours.html#prescott">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="prescott.html">Details</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="tour-card">
-        <div class="tc-media">
-          <img src="../assets/429e8387a7b862a8.webp" alt="Downtown Prescott history tour">
-          <span class="tc-flag bg-gold">Morning Walk</span>
-          <span class="tc-price">$35 <small>/ adult</small></span>
-          <span class="tc-rating chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 125+</span>
-        </div>
-        <div class="tc-body">
-          <span class="tc-city accent-gold">Prescott · History</span>
+          <span class="tc-city accent-orange">History · Morning</span>
           <h3>Prescott History Tour</h3>
-          <p class="desc">The territorial capital, the courthouse plaza and the fire that rebuilt Whiskey Row, told in the morning light.</p>
-          <div class="tc-meta"><span>☀️ Daily 10 AM</span><span>⏱ Easy walking</span><span>🏛 Courthouse plaza</span></div>
+          <p class="desc">Two full hours in Arizona's first territorial capital. Courthouse Plaza, Whiskey Row and the Carnegie Library, with the miners, madams and lawmakers who built a capital out of pine boards by 1864.</p>
+          <div class="tc-meta"><span>☀️ Daily 10 AM</span><span>⏱ 120 min</span><span>📍 Courthouse Plaza, Rough Rider statue</span></div>
           <div class="tc-actions">
             <a class="btn btn-sm btn-book btn-block" href="tours.html#prescott">Book Now</a>
-            <a class="btn btn-sm btn-ghost-dark btn-block" href="prescott.html">Details</a>
+            <a class="btn btn-sm btn-ghost-dark btn-block" href="tours.html#prescott">Details</a>
           </div>
         </div>
       </article>
@@ -481,6 +335,47 @@
     </div>
     <div class="tours-foot">
       <a class="btn btn-dark" href="tours.html">See All Tours &amp; Times</a>
+      <a class="btn btn-ghost-dark" href="tel:+19282240518"><span class="ico">📞</span> Ask Us Which Tour Fits</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANDMARKS BAND ============ -->
+<section class="landmarks" id="landmarks">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="kicker">The Buildings That Do the Talking</span>
+      <h2>Three landmarks, three reasons to linger downtown</h2>
+      <p>Every Prescott route walks the same blocks the territory was run from. These are the headliners.</p>
+    </div>
+    <div class="lm-grid">
+      <a class="lm-card" href="tours.html#prescott">
+        <span class="bg" style="background-image:url('../assets/429e8387a7b862a8.webp');background-position:center 60%"></span>
+        <div class="lm-body">
+          <span class="yr">✦ Whiskey Row · Fire of 1900</span>
+          <h3>The Palace Saloon</h3>
+          <p>When the great fire of July 1900 took Whiskey Row, the Palace's patrons carried the bar across the street and kept drinking while the block burned. The bar came back. So did some of the patrons, your guide will argue.</p>
+          <span class="lnk">Hear it on the Ghost Tour →</span>
+        </div>
+      </a>
+      <a class="lm-card" href="tours.html#prescott">
+        <span class="bg" style="background-image:url('../assets/31f17baa015b07b9.webp');background-position:center 70%"></span>
+        <div class="lm-body">
+          <span class="yr">✦ Corner of the Plaza</span>
+          <h3>Hotel St. Michael</h3>
+          <p>Rebuilt in brick after the 1900 fire, it has watched Courthouse Plaza from the corner of Montezuma and Gurley ever since. Look up at the gargoyles, then ask your guide who they were carved to resemble.</p>
+          <span class="lnk">Hear it on the Ghost Tour →</span>
+        </div>
+      </a>
+      <a class="lm-card" href="tours.html#prescott">
+        <span class="bg" style="background-image:url('../assets/534deaab85c684a9.jpg')"></span>
+        <div class="lm-body">
+          <span class="yr">✦ Est. 1927</span>
+          <h3>The Hassayampa Inn</h3>
+          <p>Prescott's grand hotel opened in 1927 with a hand-painted lobby and a hand-cranked elevator. Guides save the story of the bride in the balcony room for the sidewalk out front, after dark.</p>
+          <span class="lnk">Hear it on the Ghost Tour →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -489,20 +384,24 @@
 <section class="why" id="why">
   <div class="wrap">
     <div class="why-media">
-      <img src="../assets/72c1e8e304100b20.jpg" alt="Costumed Victorian guide holding a lantern under an iron arch at night" loading="lazy">
-      <div class="float-chip"><b>Guides who live here</b>Five generations of Arizona roots</div>
+      <img src="../assets/e42e3b0af201ae42.webp" alt="Two costumed guides with glowing lanterns leading a night tour" loading="lazy">
+      <div class="float-chip"><b>Guides who know the Row</b>Five generations of Arizona roots</div>
     </div>
     <div>
       <span class="kicker on-dark">The Local Tour, Not the Franchise</span>
-      <h2>National chains sell ghost tours in a hundred cities from one script factory. We are the opposite.</h2>
-      <p class="lead">Freaky Foot Tours is mother and son owned, founded in Flagstaff in 2015 and never franchised. One family, three Arizona towns, every story researched at home.</p>
+      <h2>Prescott is a town we learned on foot, not a pin on a franchise map.</h2>
+      <p class="lead">Freaky Foot Tours is mother and son owned, founded in Arizona in 2015 and never franchised. The Prescott routes were researched the slow way: courthouse records, newspaper archives and long conversations with the people who pour the drinks on Whiskey Row.</p>
       <ul class="why-list">
-        <li><span class="tick">✓</span><span><b>We literally wrote the book.</b> Co-founder Susan Johnson is the local author behind haunted Flagstaff's definitive history.</span></li>
-        <li><span class="tick">✓</span><span><b>Guides live in the towns they haunt.</b> Ask them where to eat after the tour. They will argue about it.</span></li>
-        <li><span class="tick">✓</span><span><b>Flagstaff's most reviewed tour company.</b> 5.0 on Google across 675+ reviews, 4.9 on TripAdvisor.</span></li>
-        <li><span class="tick">✓</span><span><b>Featured on Travel Channel's The Dead Files</b> in 2022, filmed right here on our streets.</span></li>
+        <li><span class="tick">✓</span><span><b>Fourteen researched stops, not a script from headquarters.</b> Names, dates and the year the fire jumped the street. Ask a follow-up question. Our guides love follow-up questions.</span></li>
+        <li><span class="tick">✓</span><span><b>4.9 on Google across 125+ Prescott reviews,</b> part of 1,400+ verified reviews cross-platform and 30,000+ guests guided since 2015.</span></li>
+        <li><span class="tick">✓</span><span><b>Featured on Travel Channel's The Dead Files</b> in 2022. Co-founder Susan Johnson is the local author who wrote the book on haunted Flagstaff, and she holds Prescott to the same standard.</span></li>
+        <li><span class="tick">✓</span><span><b>Guides with five generations of Arizona roots.</b> Ask where to get a drink after the tour. On Whiskey Row, that argument takes a while.</span></li>
       </ul>
-      <div class="why-ctas">
+      <div class="press-quote">
+        <q>Freaky Foot Tours owner Nick Jones undergoes some paranormal testing and local author Susan Johnson shares the story of the 1937 Walkup family murders.</q>
+        <span class="src">Arizona Daily Sun, March 2022, on Travel Channel's The Dead Files</span>
+      </div>
+      <div class="why-ctas" style="margin-top:28px">
         <a class="btn btn-book" href="#tours">Book With the Locals</a>
         <a class="btn btn-ghost-light" href="stories.html">Read Our Stories</a>
       </div>
@@ -510,70 +409,29 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section class="testi" id="reviews">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="kicker">1,400+ Verified Reviews Cross-Platform</span>
-      <h2>Guests keep saying the quiet part out loud</h2>
-      <p>5.0 on Google with 675+ Flagstaff reviews. 4.9 on TripAdvisor. Here is the flavor.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="t-card">
-        <span class="stars">★★★★★</span>
-        <blockquote>"Our guide grew up here and it showed. Real hotel names, real dates, real chills. We booked the Route 66 walk for the next morning before we even got back to the car."</blockquote>
-        <span class="who"><b>Recent guest</b> · Google review, Flagstaff Ghost Tour</span>
-      </div>
-      <div class="t-card">
-        <span class="stars">★★★★★</span>
-        <blockquote>"We have done ghost tours in six states. This was the first one that felt like a local letting us in on the town's secrets instead of an actor reading a script."</blockquote>
-        <span class="who"><b>Recent guest</b> · TripAdvisor review, Flagstaff</span>
-      </div>
-      <div class="t-card">
-        <span class="stars">★★★★★</span>
-        <blockquote>"Perfect length, easy walking, and the Monte Vista stories alone were worth the price. Book the 7 PM and stay downtown after, you will want to see the hotel yourself."</blockquote>
-        <span class="who"><b>Recent guest</b> · Google review, Flagstaff Ghost Tour</span>
-      </div>
-    </div>
-    <div class="press-strip">
-      <span class="badge">Arizona<br>Daily Sun<br>· 2022 ·</span>
-      <q>Freaky Foot Tours owner Nick Jones undergoes some paranormal testing and local author Susan Johnson shares the story of the 1937 Walkup family murders.</q>
-      <span class="src">On Travel Channel's The Dead Files, March 2022</span>
-    </div>
-    <div class="testi-foot">
-      <a class="btn btn-book" href="#tours">Join 30,000+ Happy Guests</a>
-      <a class="btn btn-ghost-dark" href="tour.html#reviews">Read All Reviews</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ TEASER ============ -->
+<!-- ============ FAQ ============ -->
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="kicker">Before You Book</span>
+      <span class="kicker">Before You Book Prescott</span>
       <h2>Quick answers</h2>
     </div>
     <div class="faq-list">
       <details open>
-        <summary>Is the ghost tour scary, or can I bring my kids?<span class="plus">+</span></summary>
-        <div class="a">Our classic tours are storytelling, not jump scares. All ages are welcome and we recommend 13+ for the ghost tours. Mountain Town of Madness is the exception: strictly 21 and over.</div>
+        <summary>Where do the Prescott tours meet?<span class="plus">+</span></summary>
+        <div class="a">Both tours meet at the Rough Rider statue on Courthouse Plaza, 120 S Cortez St, in the heart of downtown Prescott. The Ghost Tour steps off nightly at 7 PM and the History Tour daily at 10 AM. Your confirmation email pins the exact spot, and street parking around the plaza is easy to find in the evening.</div>
       </details>
       <details>
-        <summary>What if it rains or snows?<span class="plus">+</span></summary>
-        <div class="a">We run rain, snow or starlight. Flagstaff weather is part of the show. Dress in layers and we will handle the ghosts.</div>
+        <summary>Is the History Tour spooky?<span class="plus">+</span></summary>
+        <div class="a">No. The 10 AM Prescott History Tour is a straight history walk: 120 minutes through Courthouse Plaza, Whiskey Row and the Carnegie Library, covering the territorial capital years, the fire of 1900 and the characters who rebuilt the town. If you want the ghost stories, that is the 7 PM Prescott Ghost Tour. Plenty of guests do both in one day.</div>
       </details>
       <details>
-        <summary>Can I cancel or reschedule?<span class="plus">+</span></summary>
-        <div class="a">Yes. Full refund when you cancel 72 or more hours before your tour, and we are happy to move your date when plans shift. Call or text (928) 224-0518.</div>
-      </details>
-      <details>
-        <summary>Where do the tours start?<span class="plus">+</span></summary>
-        <div class="a">Each tour page lists its exact meeting point. The Original Flagstaff Ghost Tour meets at Wheeler Park, 212 W Aspen Ave, near City Hall. Our office is at 24 N San Francisco St Unit J in downtown Flagstaff.</div>
+        <summary>What about weather and cancellations?<span class="plus">+</span></summary>
+        <div class="a">We run rain, snow or starlight, and Prescott evenings cool off fast at a mile high, so bring a layer. Full refund when you cancel 72 or more hours before your tour, and we are happy to move your date when plans shift. Call or text (928) 224-0518.</div>
       </details>
     </div>
     <div class="faq-foot">
-      <a class="btn btn-dark" href="contact.html">All Questions Answered</a>
+      <a class="btn btn-dark" href="contact.html">Ask Us Anything</a>
       <a class="btn btn-ghost-dark" href="sms:+19282240518"><span class="ico">💬</span> Text Us a Question</a>
     </div>
   </div>
@@ -582,16 +440,16 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final">
   <div class="wrap">
-    <span class="kicker on-dark">Tonight, 7 PM, Downtown</span>
-    <h2>The lanterns are lit. <em>Save your spot.</em></h2>
-    <p>Small groups sell out on weekends, especially the 7 PM Flagstaff departure. Book direct for the best price and free cancellation up to 72 hours out.</p>
+    <span class="kicker on-dark">Tonight, 7 PM, Courthouse Plaza</span>
+    <h2>Whiskey Row after dark. <em>Save your spot.</em></h2>
+    <p>Fourteen stops, ninety minutes and the saloon that outdrank a fire. Book direct for the best price and free cancellation up to 72 hours out.</p>
     <div class="hero-proof">
-      <span class="chip chip-glass"><span class="stars">★★★★★</span> 5.0 Google · 675+ reviews</span>
-      <span class="chip chip-glass">🏆 Best of Flagstaff 2023</span>
+      <span class="chip chip-glass"><span class="stars">★★★★★</span> 4.9 Google · 125+ Prescott reviews</span>
+      <span class="chip chip-glass">👣 30,000+ guests guided</span>
       <span class="chip chip-glass">✦ Locally owned · Est. 2015</span>
     </div>
     <div class="hero-ctas">
-      <a class="btn btn-book" href="#tours"><span class="ico">🎟</span> Book Your Tour Now</a>
+      <a class="btn btn-book" href="#tours"><span class="ico">🎟</span> Book a Prescott Tour</a>
       <a class="btn btn-ghost-light" href="tel:+19282240518"><span class="ico">📞</span> Call or Text (928) 224-0518</a>
     </div>
   </div>
@@ -648,7 +506,7 @@
 
 <!-- ============ MOBILE BOOK BAR ============ -->
 <div class="book-bar">
-  <div class="meta"><span class="stars">★★★★★</span> 5.0 · 675+ reviews<br>Tours from $29</div>
+  <div class="meta"><span class="stars">★★★★★</span> 4.9 · 125+ Prescott reviews<br>Prescott Ghost Tour · Adults $29</div>
   <a class="btn btn-sm btn-ghost-light" href="tel:+19282240518" aria-label="Call Freaky Foot Tours">📞</a>
   <a class="btn btn-sm btn-book" href="#tours">Book Now</a>
 </div>
